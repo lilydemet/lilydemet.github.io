@@ -1,0 +1,35 @@
+/* styles for process atlas */
+h1{
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 16pt;
+     font-weight: normal;
+     text-align: center;
+}
+
+h4{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12pt;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.descript {
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-size: 11pt;
+ font-weight: lighter;
+ text-align: center;
+ line-height: 2;
+ margin-right: 450px;
+ margin-left: 450px;
+}
+
+p{
+ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ font-size: 11pt;
+ font-weight: lighter;
+ line-height: 1.4;
+ margin-right: 400px;
+ margin-left: 400px;
+ text-align: justify;
+ text-justify: inter-word;
+}
