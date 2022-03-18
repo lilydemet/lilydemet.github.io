@@ -114,7 +114,6 @@ video{
 .nav{
     font-family: 'Courier New', Courier, monospace;
     font-size: 9.5pt; 
-    margin-right: 3%;
 }
 /* alternative for .menu-item - button as a link */
 .button{
