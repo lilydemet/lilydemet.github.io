@@ -1,16 +1,106 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- <script>
+        src =
+          "https://raw.githubusercontent.com/stowball/jQuery-rwdImageMaps/master/jquery.rwdImageMaps.js";
+      </script>
+      <script>
+        src =
+          "https://raw.githubusercontent.com/stowball/jQuery-rwdImageMaps/master/jquery.rwdImageMaps.min.js";
+      </script> -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      .row {
+      display: flex;
+    }
 
-<head>
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
 
-<body>
-    <br>
-    <br>
-    <h4>portfolio</h4>
-    <br>
-   
-</body>
+    .column-left {
+        flex: 50%;
+        padding: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 12.5pt;
+        font-weight: lighter;
+        line-height: 1.2;
+        text-align: justify;
+        letter-spacing: .16mm;
+        text-justify: inter-word; 
+        margin-left: 15%;
+    
+    }
 
+
+    
+
+      .column-right {
+        flex: 50%;
+        padding: 5px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 12.5pt;
+        font-weight: lighter;
+        line-height: 1.85;
+        text-align: justify;
+        letter-spacing: .16mm;
+        text-justify: inter-word; 
+        margin-left: 5%;
+        margin-right: 15%;
+    }
+    
+      </style>
+  </head>
+
+  <body>
+
+    <!-- <a href="./cv.html" target="_blank"> > CV</a><br>
+    <a href="./projects" target="_blank"> > projects</a><br> -->
+    <div class="row">
+      <!--LEFT-->
+      <div class="column-left" > 
+      <img src="./media/feeling-the-city.jpg" style="width:100%;">
+      </div>
+      <div class="column-right">
+      Lily Demet is a bricoleur-as-researcher engaged in deep mapping, a praxis of interference with hegemonic forms of engaging/representing place, producing geographic knowledge, and rendering spatial research public. Interferences enacted by their iterative superposition of theory and practice articulate the sites of their master’s fieldwork. Lily is also a certified yoga teacher, cartographer, and artist. Apart from deep mapping, their spatiorhythmic practices include unicycling and fiddling on the viola. Though, unlike the simultaneous apprehension of light behaving as a wave and particle, Lily may, at times, be observed doing both at once. 
+    </div>
+  </div>
+    <!-- <div style="height:100%;">
+    <img
+      src="./media/ui/landing-page.jpg"
+      alt="sitemap"
+      style="width: 100%"
+      usemap="#sitemap"
+    />
+    <map name="sitemap">
+      <area
+        target="_blank"
+        shape="poly"
+        coords="88,91,90,255,44,46,45,255,77,78,81,255,105,109,108,255,72,76,77,255,154,158,159,255,188,192,191,255,179,182,182,255,51,52,54,255"
+        alt="practices"
+        href="./practices.html"
+      />
+    </map>
+
+    <script>
+        $(document).ready(function(e) {
+            $('img[sitemap]').rwdImageMaps();
+            
+            $('area').on('click', function() {
+                alert($(this).attr('alt') + ' clicked');
+            });
+        });
+        </script>
+    </div> -->
+    <!--LINKS
+https://negative-spaces.github.io/
+https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/
+
+-->
+  </body>
 </html>
+
+
