@@ -160,4 +160,33 @@ a:hover {
     width: 55%;
 }
 
-
+/*for image grids*/
+* {
+    box-sizing: border-box;
+  }
+  
+.row2 {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 3px;
+  }
+  .column2 {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 4px;
+  }
+  .column2 img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+  @media screen and (max-width: 700px) {
+    .column2 {
+      -ms-flex: 50%;
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
