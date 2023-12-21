@@ -94,6 +94,96 @@ font-weight: lighter;
     text-align: left;
     text-transform: uppercase;
 }
+
+
+  /*styling for card set deck*/
+  img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: arrow;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 8px;
+  margin-top: -50px;
+  color: black;
+  font-weight: 2px;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #36201a;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #36201a;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
 </style>
 </head>
 <body>
@@ -107,7 +197,8 @@ font-weight: lighter;
   <button class="tablinks" onclick="openArts(event, 'Nudes')">Nudes</button>
   <button class="tablinks" onclick="openArts(event, 'Landscape')">Landscape</button>
 <button class="tablinks" onclick="openArts(event, 'Portraits')">Portraits</button>
-<button class="tablinks" onclick="openArts(event, 'Crafts')">Crafts</button>
+<button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS</button>
+<button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button>
 <!-- <button class="tablinks" onclick="openArts(event, 'Music')">Music</button> -->
 <!-- <button class="tablinks" onclick="openArts(event, 'Stories')">Stories</button> -->
 <button class="tablinks" onclick="openArts(event, 'Cartography')">Cartography</button>
@@ -382,33 +473,165 @@ font-weight: lighter;
       <a href="#portraits-top">return to top</a><br> 
     </div>
     
+ <!--Prints-->
+ <div id="Prints" class="tabcontent">
+  <a href="#cards" style="margin-left:10%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px; font-weight: lighter;">cards</a><br>
+  <a href="#totes" style="margin-left:10%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px; font-weight: lighter;">totes</a><br>
+  <a href="#shirts" style="margin-left:10%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px; font-weight: lighter;">shirts</a><br>
+  <br>
+
+  <!--cards-->
+  <div style="width:80%; margin-left:10%">
+  <a name="cards" id="cards"></a>
+  <div class="container">
+    <div class="mySlides">
+      <div class="numbertext">1 / 7</div>
+      <img src="./media/cards/IMG_7760.JPG" style="width:100%">
+    </div>
   
-  <!--Crafts-->
-  <div id="Crafts" class="tabcontent">
-    <br><br>
-    <div class="row2" style="margin-left:7%;"> 
-      <div class="column4">
-          <img src="./media/crafts/bag1.jpg" style="width:100%">
-          <img src="./media/crafts/bag2.jpg" style="width:100%">
-          <img src="./media/crafts/bag3.jpg" style="width:100%">
-          <br><br>
-          </div>
-          <div class="column4">
-            <img src="./media/crafts/bag4.jpg" style="width:100%">
-            <img src="./media/crafts/bag5.jpg" style="width:100%">
-            <img src="./media/crafts/bag6.jpg" style="width:100%">
-            <br><br>
-            </div>            
-      <div class="column4">
-        <img src="./media/crafts/bag7.jpg" style="width:100%">
-        <img src="./media/crafts/bag8.jpg" style="width:100%">
-        <img src="./media/crafts/bag9.jpg" style="width:100%">
+    <div class="mySlides">
+      <div class="numbertext">2 / 7</div>
+      <img src="./media/cards/IMG_7766.JPG" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 7</div>
+      <img src="./media/cards/IMG_7778.JPG" style="width:100%">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">4 / 7</div>
+      <img src="img_lights_wide.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 7</div>
+      <img src="./media/cards/IMG_7782.JPG" style="width:100%">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">6 / 7</div>
+      <img src="./media/cards/IMG_7793.JPG" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 7</div>
+      <img src="./media/cards/IMG_7786.JPG" style="width:100%">
+    </div>
+      
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7760.JPG" style="width:100%" onclick="currentSlide(1)" alt="Human Geography 1">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7766.JPG" style="width:100%" onclick="currentSlide(2)" alt="Human Geography 2">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7778.JPG" style="width:100%" onclick="currentSlide(3)" alt="Human Geography 3">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7782.JPG" style="width:100%" onclick="currentSlide(4)" alt="Human Geography 4">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7789.JPG" style="width:100%" onclick="currentSlide(5)" alt="Human Geography 5">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7793.JPG" style="width:100%" onclick="currentSlide(6)" alt="Human Geography 6">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="./media/cards/IMG_7786.JPG" style="width:100%" onclick="currentSlide(7)" alt="Physical Geography 1">
+      </div>    
+    </div>
+  </div>
+  
+  <script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+  </script>
+
+  </div>
+  
+  
+
+<br><br><br><br>
+  <!--bags-->
+  <div class="row2" style="margin-left:7%;"> 
+    <a name="totes" id="totes"></a>
+    <div class="column4">
+        <img src="./media/crafts/bag1.jpg" style="width:100%">
+        <img src="./media/crafts/bag2.jpg" style="width:100%">
+        <img src="./media/crafts/bag3.jpg" style="width:100%">
         <br><br>
-      </div>
-      <!-- <p class="desc" style="margin-left:0%;">Tote bags with original watercolor art hand-applied with Iron transfers.<br>This was a creative solution to the fact that custom tote bag printing would <br>cost me $50 each bag. The materials for these come out to $5 - $10 per bag.</p> -->
-      </div>
+        </div>
+        <div class="column4">
+          <img src="./media/crafts/bag4.jpg" style="width:100%">
+          <img src="./media/crafts/bag5.jpg" style="width:100%">
+          <img src="./media/crafts/bag6.jpg" style="width:100%">
+          <br><br>
+          </div>            
+    <div class="column4">
+      <img src="./media/crafts/bag7.jpg" style="width:100%">
+      <img src="./media/crafts/bag8.jpg" style="width:100%">
+      <img src="./media/crafts/bag9.jpg" style="width:100%">
+      <br><br>
+    </div>
+    <!-- <p class="desc" style="margin-left:0%;">Tote bags with original watercolor art hand-applied with Iron transfers.<br>This was a creative solution to the fact that custom tote bag printing would <br>cost me $50 each bag. The materials for these come out to $5 - $10 per bag.</p> -->
+    </div>
 
 
+
+
+
+  <!--shirts-->
+  <div class="row2" style="margin-left:15%;"> 
+    <a name="shirts" id="shirts"></a>
+
+    <div class="column4">
+    </div>
+
+  </div>
+  
+
+  </div>
+
+  <!--Multimedia-->
+  <div id="Multimedia" class="tabcontent">
     <br><br><br>
     <img src="./media/crafts/ram-horns.jpg" style="width:55%; margin-left:20%;">
     <p class="desc" style="margin-left:20%;">Horns made from watercolor paper, thread, and acrylic paint</p>
@@ -442,34 +665,6 @@ font-weight: lighter;
     <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
   </div>
-
-  <!--stories-->
-
-  <!-- <div id="Stories" class="tabcontent">
-    <div style="margin-left:25%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div> -->
-  
-   <!--Music-->
-  <!-- <div id="Music" class="tabcontent">
-
-    ADD MUSIC TO CV
-    Performed music solo and with others for local nursing homes	      		    9, 10, 11, 12
-Invited to play for the LHS Musical Pit orchestra	
-Selected to Participate in MMEA Junior Districts 						         9
-Principal violist for MICCA performance in Chamber Orchestra	
-circus orchestra
-
-orchestral awards
-quartet
-fiddle camp 
-
-• Participated in numerous orchestras including UMass Symphony, Hilltop Circus Band, Lexington Pit Orchestra
-• Premiered commissioned ‘Trinity’ at Boston’s Jordan Hall as member of Lexington High Chamber Orchestra
-First stand viola at MMEA Junior Districts 
-
-  </div> -->
 
   <!--Cartography-->
   <div id="Cartography" class="tabcontent">
