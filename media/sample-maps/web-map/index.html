@@ -42,15 +42,13 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.90609350320055, -129.11892488908427],[47.93744347608551, -122.77678319319278]]);
+        }).fitBounds([[-9.01937599715129e-06,-127.48875895312563],[9.019375997151292e-06,-127.48872881564823]]);
         var hash = new L.Hash(map);
-        map.setView([49.68255958062235, -125.82633490174686], 7);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        
         map.createPane('pane_ESRISatellite_0');
         map.getPane('pane_ESRISatellite_0').style.zIndex = 400;
         var layer_ESRISatellite_0 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -385,10 +383,12 @@
         function pop_SelectedFirstNationsReserves_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Population (2021)</th>\
+                        <td>' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['BAND_NAME'] !== null ? autolinker.link(feature.properties['BAND_NAME'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Band</th>\
+                        <td>' + (feature.properties['BAND_NAME'] !== null ? autolinker.link(feature.properties['BAND_NAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
