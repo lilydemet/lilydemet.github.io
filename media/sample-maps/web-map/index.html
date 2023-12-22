@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/TotalPopulation2022_3.js"></script>
+        <script src="data/PercentPopulationChange20162022_4.js"></script>
+        <script src="data/PopulationCenters_5.js"></script>
+        <script src="data/SelectedFirstNationsReserves_6.js"></script>
+        <script src="data/Hospitals_7.js"></script>
+        <script src="data/FerryTerminals_8.js"></script>
+        <script src="data/AirportsandHelipads_9.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[50.90609350320055, -129.11892488908427],[47.93744347608551, -122.77678319319278]]);
+        var hash = new L.Hash(map);
+        map.setView([49.68255958062235, -125.82633490174686], 7);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        
+        map.createPane('pane_ESRISatellite_0');
+        map.getPane('pane_ESRISatellite_0').style.zIndex = 400;
+        var layer_ESRISatellite_0 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRISatellite_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRISatellite_0;
+        map.createPane('pane_OSMStandard_1');
+        map.getPane('pane_OSMStandard_1').style.zIndex = 401;
+        var layer_OSMStandard_1 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_1',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_1;
+        map.createPane('pane_ESRIShadedRelief_2');
+        map.getPane('pane_ESRIShadedRelief_2').style.zIndex = 402;
+        var layer_ESRIShadedRelief_2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+            pane: 'pane_ESRIShadedRelief_2',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_ESRIShadedRelief_2;
+        map.addLayer(layer_ESRIShadedRelief_2);
+        function pop_TotalPopulation2022_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_AREA_ABBREVIATION'] !== null ? autolinker.link(feature.properties['ADMIN_AREA_ABBREVIATION'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Population (2022)'] !== null ? autolinker.link(feature.properties['Population (2022)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_TotalPopulation2022_3_0(feature) {
+            if (feature.properties['Population (2022)'] >= 0.000000 && feature.properties['Population (2022)'] <= 500.000000 ) {
+                return {
+                pane: 'pane_TotalPopulation2022_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,211,255,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Population (2022)'] >= 500.000000 && feature.properties['Population (2022)'] <= 5000.000000 ) {
+                return {
+                pane: 'pane_TotalPopulation2022_3',
+                opacity: 1,
+                color: 'rgba(52,51,54,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(187,156,242,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Population (2022)'] >= 5000.000000 && feature.properties['Population (2022)'] <= 20000.000000 ) {
+                return {
+                pane: 'pane_TotalPopulation2022_3',
+                opacity: 1,
+                color: 'rgba(210,203,217,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,80,187,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Population (2022)'] >= 20000.000000 && feature.properties['Population (2022)'] <= 50000.000000 ) {
+                return {
+                pane: 'pane_TotalPopulation2022_3',
+                opacity: 1,
+                color: 'rgba(210,203,217,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(83,28,137,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Population (2022)'] >= 50000.000000 && feature.properties['Population (2022)'] <= 126000.000000 ) {
+                return {
+                pane: 'pane_TotalPopulation2022_3',
+                opacity: 1,
+                color: 'rgba(210,203,217,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(43,0,86,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_TotalPopulation2022_3');
+        map.getPane('pane_TotalPopulation2022_3').style.zIndex = 403;
+        map.getPane('pane_TotalPopulation2022_3').style['mix-blend-mode'] = 'normal';
+        var layer_TotalPopulation2022_3 = new L.geoJson(json_TotalPopulation2022_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_TotalPopulation2022_3',
+            layerName: 'layer_TotalPopulation2022_3',
+            pane: 'pane_TotalPopulation2022_3',
+            onEachFeature: pop_TotalPopulation2022_3,
+            style: style_TotalPopulation2022_3_0,
+        });
+        bounds_group.addLayer(layer_TotalPopulation2022_3);
+        map.addLayer(layer_TotalPopulation2022_3);
+        function pop_PercentPopulationChange20162022_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ADMIN_AREA_ABBREVIATION'] !== null ? autolinker.link(feature.properties['ADMIN_AREA_ABBREVIATION'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Percent Change in Population,  2016-2022'] !== null ? autolinker.link(feature.properties['Percent Change in Population,  2016-2022'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PercentPopulationChange20162022_4_0(feature) {
+            if (feature.properties['Percent Change in Population,  2016-2022'] >= -6.500000 && feature.properties['Percent Change in Population,  2016-2022'] <= 0.000000 ) {
+                return {
+                pane: 'pane_PercentPopulationChange20162022_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(219,93,35,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Percent Change in Population,  2016-2022'] >= 0.000000 && feature.properties['Percent Change in Population,  2016-2022'] <= 10.000000 ) {
+                return {
+                pane: 'pane_PercentPopulationChange20162022_4',
+                opacity: 1,
+                color: 'rgba(37,37,37,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(130,197,161,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Percent Change in Population,  2016-2022'] >= 10.000000 && feature.properties['Percent Change in Population,  2016-2022'] <= 20.000000 ) {
+                return {
+                pane: 'pane_PercentPopulationChange20162022_4',
+                opacity: 1,
+                color: 'rgba(37,37,37,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(32,143,212,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['Percent Change in Population,  2016-2022'] >= 20.000000 && feature.properties['Percent Change in Population,  2016-2022'] <= 33.000000 ) {
+                return {
+                pane: 'pane_PercentPopulationChange20162022_4',
+                opacity: 1,
+                color: 'rgba(37,37,37,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,65,162,1.0)',
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_PercentPopulationChange20162022_4');
+        map.getPane('pane_PercentPopulationChange20162022_4').style.zIndex = 404;
+        map.getPane('pane_PercentPopulationChange20162022_4').style['mix-blend-mode'] = 'normal';
+        var layer_PercentPopulationChange20162022_4 = new L.geoJson(json_PercentPopulationChange20162022_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PercentPopulationChange20162022_4',
+            layerName: 'layer_PercentPopulationChange20162022_4',
+            pane: 'pane_PercentPopulationChange20162022_4',
+            onEachFeature: pop_PercentPopulationChange20162022_4,
+            style: style_PercentPopulationChange20162022_4_0,
+        });
+        bounds_group.addLayer(layer_PercentPopulationChange20162022_4);
+        map.addLayer(layer_PercentPopulationChange20162022_4);
+        function pop_PopulationCenters_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(feature.properties['NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['2022 population'] !== null ? autolinker.link(feature.properties['2022 population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_PopulationCenters_5_0(feature) {
+            if (feature.properties['2022 population'] >= 0.000000 && feature.properties['2022 population'] <= 500.000000 ) {
+                return {
+                pane: 'pane_PopulationCenters_5',
+                radius: 2.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['2022 population'] >= 500.000000 && feature.properties['2022 population'] <= 5000.000000 ) {
+                return {
+                pane: 'pane_PopulationCenters_5',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['2022 population'] >= 5000.000000 && feature.properties['2022 population'] <= 20000.000000 ) {
+                return {
+                pane: 'pane_PopulationCenters_5',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(216,216,216,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['2022 population'] >= 20000.000000 && feature.properties['2022 population'] <= 50000.000000 ) {
+                return {
+                pane: 'pane_PopulationCenters_5',
+                radius: 8.0,
+                opacity: 1,
+                color: 'rgba(216,216,216,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: false,
+            }
+            }
+            if (feature.properties['2022 population'] >= 50000.000000 && feature.properties['2022 population'] <= 126000.000000 ) {
+                return {
+                pane: 'pane_PopulationCenters_5',
+                radius: 10.0,
+                opacity: 1,
+                color: 'rgba(216,216,216,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: false,
+            }
+            }
+        }
+        map.createPane('pane_PopulationCenters_5');
+        map.getPane('pane_PopulationCenters_5').style.zIndex = 405;
+        map.getPane('pane_PopulationCenters_5').style['mix-blend-mode'] = 'normal';
+        var layer_PopulationCenters_5 = new L.geoJson(json_PopulationCenters_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PopulationCenters_5',
+            layerName: 'layer_PopulationCenters_5',
+            pane: 'pane_PopulationCenters_5',
+            onEachFeature: pop_PopulationCenters_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_PopulationCenters_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_PopulationCenters_5);
+        function pop_SelectedFirstNationsReserves_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['BAND_NAME'] !== null ? autolinker.link(feature.properties['BAND_NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_SelectedFirstNationsReserves_6_0() {
+            return {
+                pane: 'pane_SelectedFirstNationsReserves_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,226,63,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_SelectedFirstNationsReserves_6');
+        map.getPane('pane_SelectedFirstNationsReserves_6').style.zIndex = 406;
+        map.getPane('pane_SelectedFirstNationsReserves_6').style['mix-blend-mode'] = 'normal';
+        var layer_SelectedFirstNationsReserves_6 = new L.geoJson(json_SelectedFirstNationsReserves_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SelectedFirstNationsReserves_6',
+            layerName: 'layer_SelectedFirstNationsReserves_6',
+            pane: 'pane_SelectedFirstNationsReserves_6',
+            onEachFeature: pop_SelectedFirstNationsReserves_6,
+            style: style_SelectedFirstNationsReserves_6_0,
+        });
+        bounds_group.addLayer(layer_SelectedFirstNationsReserves_6);
+        map.addLayer(layer_SelectedFirstNationsReserves_6);
+        function pop_Hospitals_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SV_NAME'] !== null ? autolinker.link(feature.properties['SV_NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Hospitals_7_0() {
+            return {
+                pane: 'pane_Hospitals_7',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(158,189,197,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(172,43,26,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Hospitals_7');
+        map.getPane('pane_Hospitals_7').style.zIndex = 407;
+        map.getPane('pane_Hospitals_7').style['mix-blend-mode'] = 'normal';
+        var layer_Hospitals_7 = new L.geoJson(json_Hospitals_7, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Hospitals_7',
+            layerName: 'layer_Hospitals_7',
+            pane: 'pane_Hospitals_7',
+            onEachFeature: pop_Hospitals_7,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Hospitals_7_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Hospitals_7);
+        function pop_FerryTerminals_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TERMINAL_NAME'] !== null ? autolinker.link(feature.properties['TERMINAL_NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Operator</th>\
+                        <td>' + (feature.properties['TERMINAL_OPERATOR'] !== null ? autolinker.link(feature.properties['TERMINAL_OPERATOR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Vessel Size Limit</th>\
+                        <td>' + (feature.properties['VESSEL_SIZE_LIMIT'] !== null ? autolinker.link(feature.properties['VESSEL_SIZE_LIMIT'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Terminal Type</th>\
+                        <td>' + (feature.properties['FERRY_TERMINAL_TYPE'] !== null ? autolinker.link(feature.properties['FERRY_TERMINAL_TYPE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_FerryTerminals_8_0() {
+            return {
+                pane: 'pane_FerryTerminals_8',
+                shape: 'triangle',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(32,73,117,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,123,182,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_FerryTerminals_8');
+        map.getPane('pane_FerryTerminals_8').style.zIndex = 408;
+        map.getPane('pane_FerryTerminals_8').style['mix-blend-mode'] = 'normal';
+        var layer_FerryTerminals_8 = new L.geoJson(json_FerryTerminals_8, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_FerryTerminals_8',
+            layerName: 'layer_FerryTerminals_8',
+            pane: 'pane_FerryTerminals_8',
+            onEachFeature: pop_FerryTerminals_8,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_FerryTerminals_8_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_FerryTerminals_8);
+        function pop_AirportsandHelipads_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AIRPORT_NAME'] !== null ? autolinker.link(feature.properties['AIRPORT_NAME'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DESCRIPTION'] !== null ? autolinker.link(feature.properties['DESCRIPTION'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Elevation</th>\
+                        <td>' + (feature.properties['ELEVATION'] !== null ? autolinker.link(feature.properties['ELEVATION'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Seaplane Access</th>\
+                        <td>' + (feature.properties['SEAPLANE_ACCESS_IND'] !== null ? autolinker.link(feature.properties['SEAPLANE_ACCESS_IND'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_AirportsandHelipads_9_0() {
+            return {
+                pane: 'pane_AirportsandHelipads_9',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/AirportsandHelipads_9.svg',
+            iconSize: [13.299999999999999, 13.299999999999999]
+        }),
+                interactive: true,
+            }
+        }
+        function style_AirportsandHelipads_9_1() {
+            return {
+                pane: 'pane_AirportsandHelipads_9',
+        rotationAngle: 0.0,
+        rotationOrigin: 'center center',
+        icon: L.icon({
+            iconUrl: 'markers/AirportsandHelipads_9.svg',
+            iconSize: [13.299999999999999, 13.299999999999999]
+        }),
+                interactive: true,
+            }
+        }
+        map.createPane('pane_AirportsandHelipads_9');
+        map.getPane('pane_AirportsandHelipads_9').style.zIndex = 409;
+        map.getPane('pane_AirportsandHelipads_9').style['mix-blend-mode'] = 'normal';
+        var layer_AirportsandHelipads_9 = new L.geoJson.multiStyle(json_AirportsandHelipads_9, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_AirportsandHelipads_9',
+            layerName: 'layer_AirportsandHelipads_9',
+            pane: 'pane_AirportsandHelipads_9',
+            onEachFeature: pop_AirportsandHelipads_9,
+            pointToLayers: [function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_AirportsandHelipads_9_0(feature));
+            },function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.marker(latlng, style_AirportsandHelipads_9_1(feature));
+            },
+        ]});
+        bounds_group.addLayer(layer_AirportsandHelipads_9);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/AirportsandHelipads_9.png" /> Airports and Helipads': layer_AirportsandHelipads_9,'<img src="legend/FerryTerminals_8.png" /> Ferry Terminals': layer_FerryTerminals_8,'<img src="legend/Hospitals_7.png" /> Hospitals': layer_Hospitals_7,'<img src="legend/SelectedFirstNationsReserves_6.png" /> Selected First Nations Reserves': layer_SelectedFirstNationsReserves_6,'Population Centers<br /><table><tr><td style="text-align: center;"><img src="legend/PopulationCenters_5_5000.png" /></td><td>< 500</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationCenters_5_50050001.png" /></td><td>500 - 5,000</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationCenters_5_5000200002.png" /></td><td>5000 - 20,000</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationCenters_5_20000500003.png" /></td><td>20,000 - 50,000</td></tr><tr><td style="text-align: center;"><img src="legend/PopulationCenters_5_500001260004.png" /></td><td>50,000 - 126,000</td></tr></table>': layer_PopulationCenters_5,'Percent Population Change,  2016-2022<br /><table><tr><td style="text-align: center;"><img src="legend/PercentPopulationChange20162022_4_00.png" /></td><td>< 0</td></tr><tr><td style="text-align: center;"><img src="legend/PercentPopulationChange20162022_4_1to101.png" /></td><td>1 to 10</td></tr><tr><td style="text-align: center;"><img src="legend/PercentPopulationChange20162022_4_10to202.png" /></td><td>10 to 20</td></tr><tr><td style="text-align: center;"><img src="legend/PercentPopulationChange20162022_4_20to333.png" /></td><td>20 to 33</td></tr></table>': layer_PercentPopulationChange20162022_4,'Total Population,  2022<br /><table><tr><td style="text-align: center;"><img src="legend/TotalPopulation2022_3_5000.png" /></td><td>< 500</td></tr><tr><td style="text-align: center;"><img src="legend/TotalPopulation2022_3_50050001.png" /></td><td>500 - 5,000</td></tr><tr><td style="text-align: center;"><img src="legend/TotalPopulation2022_3_5000200002.png" /></td><td>5,000 - 20,000</td></tr><tr><td style="text-align: center;"><img src="legend/TotalPopulation2022_3_20000500003.png" /></td><td>20,000 - 50,000</td></tr><tr><td style="text-align: center;"><img src="legend/TotalPopulation2022_3_500001260004.png" /></td><td>50,000 - 126,000</td></tr></table>': layer_TotalPopulation2022_3,"ESRI Shaded Relief": layer_ESRIShadedRelief_2,"OSM Standard": layer_OSMStandard_1,"ESRI Satellite": layer_ESRISatellite_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_PopulationCenters_5.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NAME'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Helvetica\', sans-serif;">' + layer.feature.properties['NAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_PopulationCenters_5'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_PopulationCenters_5,layer_SelectedFirstNationsReserves_6]);
+        map.on("zoomend", function(){
+            resetLabels([layer_PopulationCenters_5,layer_SelectedFirstNationsReserves_6]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_PopulationCenters_5,layer_SelectedFirstNationsReserves_6]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_PopulationCenters_5,layer_SelectedFirstNationsReserves_6]);
+        });
+        </script>
+    </body>
+</html>
