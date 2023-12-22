@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts</title>
+    <style>
+    * {
+        box-sizing: border-box;
+      }
+       .row2 {
+        display: -ms-flexbox; 
+        display: flex;
+        -ms-flex-wrap: wrap; 
+        flex-wrap: wrap;
+        padding: 0 3px;
+      }
+      .column2 {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+
+      .column3 {
+        -ms-flex: 50%; /* IE10 */
+        flex: 50%;
+        max-width: 50%;
+        padding: 0 10px;
+      }
+
+      .column4 {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        max-width: 30%;
+        padding: 0 4px;
+      }
+
+      .column2 img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+      @media screen and (max-width: 700px) {
+        .column2 {
+          -ms-flex: 50%;
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+
+
+      .tab {
+  overflow: hidden;
+  margin-left:25%;
+ /* border: 1px solid #ccc;*/
+   /* background-color: #f7f5fc;*/
+}
+
+
+.tab button {
+  background-color: inherit;
+  float: auto;
+ border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0s;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
+font-weight: lighter;
+}
+
+
+.tab button:hover {
+  background-color: #dcdae3;
+}
+
+
+.tab button.active {
+  background-color: #ccc;
+}
+
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+
+.desc {
+    font-family: "Inconsolata";
+    font-size: 11pt;
+    font-weight: lighter;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+
+  /*styling for card set deck*/
+  img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: arrow;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 8px;
+  margin-top: -50px;
+  color: black;
+  font-weight: 2px;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #36201a;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #36201a;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+
+<body>
+
+<!--navigations-->
+<div>
+<p style="margin-left:3%;">
+    <a href="./index.html"> \\index </a><br>
+    <a href="./arts.html"> \/arts </a><br>
+    <a href="./arts.html"> \/CV </a>
+</p>
+</div>
+
+<!--menu-->
+<div class="tab">
+    <button class="tablinks" onclick="openArts(event, 'reference-cartography')">Reference Cartography</button>
+    <button class="tablinks" onclick="openArts(event, 'creative-cartography')">Creative Cartography</button>
+    <button class="tablinks" onclick="openArts(event, 'deep-mapping')">Deep Mapping</button>
+  </div>
+
+
+  <!--reference cartography-->
+  <div id="reference-cartography" class="tabcontent">
+    </div>
+
+<!--creative cartography-->
+<div id="creative-cartography" class="tabcontent">
+</div>
+
+<!--deep mapping-->
+<div id="deep-mapping" class="tabcontent">
+</div>
+
+
+<script>
+    function openArts(evt, artsName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(artsName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+
+</body>
+
+</html>
