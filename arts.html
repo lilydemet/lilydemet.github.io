@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arts</title>
     <style>
+
     * {
         box-sizing: border-box;
       }
@@ -116,21 +117,40 @@ font-weight: lighter;
   cursor: arrow;
 }
 
+/* Slideshow container2 - for horns */
+/* EACH SUBSEQUENT SLIDE DECK MUST BE DECLARED A NEW VARIABLE, AND SLIDE INDEX RENAMED AS WELL */
+.mySlides2 {
+  display: none;
+}
+
+.mySlides3 {
+  display: none;
+}
+
+.mySlides4 {
+  display: none;
+}
+
+.slideshow-container2 {
+  max-width: 46%;
+  position: relative;
+  margin: auto;
+}
+
 /* Next & previous buttons */
-.prev,
-.next {
+.prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: auto;
-  padding: 8px;
-  margin-top: -50px;
-  color: black;
-  font-weight: 2px;
-  font-size: 20px;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.1s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  -webkit-user-select: none;
 }
 
 /* Position the "next button" to the right */
@@ -140,18 +160,61 @@ font-weight: lighter;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: none;
+  /* animation-duration: 1.5s; */
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Caption text */
+.capt-text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #36201a;
+  color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }
 
 /* Container for image text */
@@ -187,18 +250,23 @@ font-weight: lighter;
 </style>
 </head>
 <body>
+<!--navigate elsewhere-->
 <p style="margin-left:3%;">
-        <a href="./index.html"> \\index </a>
+        <a href="./index.html"> \\index </a><br>
+        <a href="./cv.html"> /cv </a><br>
+        <a href="./mapping.html"> /mapping </a>
       </p>
 <br>
-<!--menu-->
+
+<!--tab menu-->
 <div class="tab">
   <button class="tablinks" onclick="openArts(event, 'Yogis')">Yogis</button>
   <button class="tablinks" onclick="openArts(event, 'Nudes')">Nudes</button>
   <button class="tablinks" onclick="openArts(event, 'Landscape')">Landscape</button>
 <button class="tablinks" onclick="openArts(event, 'Portraits')">Portraits</button>
 <button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS</button>
-<button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button>
+<button class="tablinks" onclick="openArts(event, 'Horns')">Horns</button>
+<!-- <button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button> -->
 <!-- <button class="tablinks" onclick="openArts(event, 'Music')">Music</button> -->
 <!-- <button class="tablinks" onclick="openArts(event, 'Stories')">Stories</button> -->
 <button class="tablinks" onclick="openArts(event, 'Cartography')">Cartography</button>
@@ -389,7 +457,7 @@ font-weight: lighter;
     <img src="./media/art/landscape/mushrooms.jpg" style="width:50%; margin-left:25%;">
   </div>
   
-  <!--Portraits-->
+<!--Portraits-->
   <div id="Portraits" class="tabcontent">
     <a name="portraits-top" id="portraits-top"></a>
     <div class="row2" style="margin-left:28%;">   
@@ -479,7 +547,7 @@ font-weight: lighter;
       <a href="#portraits-top">return to top</a><br> 
     </div>
     
- <!--Prints-->
+<!--Prints-->
  <div id="Prints" class="tabcontent">
   <a id="print-top"></a>
   <a href="#cards" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -640,6 +708,163 @@ font-weight: lighter;
   <br><br><br>
   </div>
 
+
+<!--horns-->
+<div id="Horns" class="tabcontent">
+
+  <!--set 1-->
+  <div>
+  <div class="slideshow-container2">
+    <div class="mySlides2 fade" style="display: none;">
+      <div class="numbertext">1 / 3</div>
+      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
+      <!--<div class="capt-text">Caption Text</div>-->
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides2(-1)">❮</a>
+    <a class="next" onclick="plusSlides2(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <!--script for set 1-->
+    <!--function names and variables must be different than card deck and other horn sets-->
+    <script>
+    let SlideIndex2 = 1;
+    showSlides2(SlideIndex2);
+    
+    function plusSlides2(n) {
+      showSlides2(SlideIndex2 += n);
+    }
+    
+    function currentSlide2(n) {
+      showSlides2(SlideIndex2 = n);
+    }
+    
+    function showSlides2(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides2");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {SlideIndex2 = 1}    
+      if (n < 1) {SlideIndex2 = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[SlideIndex2-1].style.display = "block";  
+      dots[SlideIndex2-1].className += " active";
+    }
+    </script>
+  </div>
+
+  <br>
+
+   
+  <!--set 2-->
+  <div>
+    <div class="slideshow-container2">
+      <div class="mySlides3 fade" style="display: none;">
+        <div class="numbertext">1 / 4</div>
+        <img src="./media/crafts/horns-set2a.jpg" style="width:100%">
+        <!--<div class="capt-text">Caption Text</div>-->
+      </div>
+      
+      <div class="mySlides3 fade">
+        <div class="numbertext">2 / 4</div>
+        <img src="./media/crafts/horns-set2b.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides3 fade">
+        <div class="numbertext">3 / 4</div>
+        <img src="./media/crafts/horns-set2c.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides3 fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="./media/crafts/horns-set2d.jpg" style="width:100%">
+      </div>
+      
+      <!--remember to update function name here-->
+      <a class="prev" onclick="plusSlides3(-1)">❮</a>
+      <a class="next" onclick="plusSlides3(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+      </div>
+      
+
+      <!--script for set 2-->
+      <!--function names and slidindex variables must be unique-->
+      <script>
+      let slideIndex3 = 1;
+      showSlides3(slideIndex3);
+      
+      function plusSlides3(n) {
+        showSlides3(slideIndex3 += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides3(slideIndex3 = n);
+      }
+      
+      function showSlides3(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides3");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex3 = 4}    
+        if (n < 1) {slideIndex3 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex3-1].style.display = "block";  
+        dots[slideIndex3-1].className += " active";
+      }
+      </script>
+  
+      </div>
+  
+  <br>
+  <br>
+  
+  <!--horns 3-->
+  <img src="./media/crafts/horns-set3s.jpg" style="width: 46%; margin-left:27%;">
+  <br><br>
+
+  
+
+
+</div>
+
+
+
+
   <!--Multimedia-->
   <div id="Multimedia" class="tabcontent">
     <br><br><br>
@@ -721,6 +946,7 @@ font-weight: lighter;
   </div>
 
 
+  <!--page script-->
   <script>
     function openArts(evt, artsName) {
       var i, tabcontent, tablinks;
