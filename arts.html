@@ -207,7 +207,19 @@ font-weight: lighter;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+/* The dots/bullets/indicators */
+.dot3 {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot3:hover {
   background-color: #717171;
 }
 
@@ -809,11 +821,12 @@ font-weight: lighter;
       </div>
       <br>
       
+      <!--dots must be unique class well in css head style for each deck-->
       <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot3" onclick="currentSlide(1)"></span> 
+        <span class="dot3" onclick="currentSlide(2)"></span> 
+        <span class="dot3" onclick="currentSlide(3)"></span> 
+        <span class="dot3" onclick="currentSlide(4)"></span> 
       </div>
       
 
@@ -834,8 +847,8 @@ font-weight: lighter;
       function showSlides3(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides3");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex3 = 4}    
+        let dots = document.getElementsByClassName("dot3");
+        if (n > slides.length) {slideIndex3 = 1}    
         if (n < 1) {slideIndex3 = slides.length}
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";  
