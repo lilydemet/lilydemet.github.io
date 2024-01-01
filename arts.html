@@ -119,6 +119,12 @@ font-weight: lighter;
 
 /* Slideshow container2 - for horns */
 /* EACH SUBSEQUENT SLIDE DECK MUST BE DECLARED A NEW VARIABLE, AND SLIDE INDEX RENAMED AS WELL */
+
+.mySlides1 {
+  display: none;
+}
+
+
 .mySlides2 {
   display: none;
 }
@@ -131,8 +137,20 @@ font-weight: lighter;
   display: none;
 }
 
+.slideshow-container1 {
+  max-width: 30%;
+  position: relative;
+  margin: auto;
+}
+
 .slideshow-container2 {
   max-width: 46%;
+  position: relative;
+  margin: auto;
+}
+
+.slideshow-container3 {
+  max-width: 53%;
   position: relative;
   margin: auto;
 }
@@ -196,7 +214,19 @@ font-weight: lighter;
 }
 
 /* The dots/bullets/indicators */
-.dot {
+
+.dot1 {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot2 {
   cursor: pointer;
   height: 7px;
   width: 7px;
@@ -219,7 +249,31 @@ font-weight: lighter;
   transition: background-color 0.6s ease;
 }
 
+
+.dot4 {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot1:hover {
+  background-color: #717171;
+}
+
+.active, .dot2:hover {
+  background-color: #717171;
+}
+
 .active, .dot3:hover {
+  background-color: #717171;
+}
+
+.active, .dot4:hover {
   background-color: #717171;
 }
 
@@ -562,121 +616,214 @@ font-weight: lighter;
 <!--Prints-->
  <div id="Prints" class="tabcontent">
   <a id="print-top"></a>
+  
+  <!--different prints menu-->
+  <!-- <div>
   <a href="#cards" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 19px; font-weight: lighter;">>cards</a><br>
   <a href="#totes" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 19px; font-weight: lighter;">>totes</a><br>
   <a href="#shirts" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 19px; font-weight: lighter;">>shirts</a><br>
+  </div> -->
   <br>
 
   <!--cards-->
-  <div style="width:60%; margin-left:20%">
-  <a name="cards" id="cards"></a>
-  <div class="container">
-    <div class="mySlides">
-      <div class="numbertext">1 / 7</div>
-      <img src="./media/cards/IMG_7760.JPG" style="width:100%">
-    </div>
+  <div>
+    <a name="cards" id="cards"></a>
+    <div class="slideshow-container3">
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">1 / 7</div>
+        <img src="./media/cards/IMG_7760.JPG" style="width:100%">
+         <!--<div class="capt-text">Caption Text</div>-->
+      </div>
+    
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">2 / 7</div>
+        <img src="./media/cards/IMG_7766.JPG" style="width:100%">
+      </div>
+    
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">3 / 7</div>
+        <img src="./media/cards/IMG_7778.JPG" style="width:100%">
+      </div>
+        
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">4 / 7</div>
+        <img src="./media/cards/IMG_7782.JPG" style="width:100%">
+      </div>
+    
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">5 / 7</div>
+        <img src="./media/cards/IMG_7789.JPG" style="width:100%">
+      </div>
+        
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">6 / 7</div>
+        <img src="./media/cards/IMG_7793.JPG" style="width:100%">
+      </div>
   
-    <div class="mySlides">
-      <div class="numbertext">2 / 7</div>
-      <img src="./media/cards/IMG_7766.JPG" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">3 / 7</div>
-      <img src="./media/cards/IMG_7778.JPG" style="width:100%">
-    </div>
+      <div class="mySlides1 fade" style="display: none;">
+        <div class="numbertext">7 / 7</div>
+        <img src="./media/cards/IMG_7786.JPG" style="width:100%">
+      </div>
       
-    <div class="mySlides">
-      <div class="numbertext">4 / 7</div>
-      <img src="./media/cards/IMG_7782.JPG" style="width:100%">
-    </div>
-  
-    <div class="mySlides">
-      <div class="numbertext">5 / 7</div>
-      <img src="./media/cards/IMG_7789.JPG" style="width:100%">
-    </div>
+     
+      <a class="prev" onclick="plusSlides1(-1)">❮</a>
+      <a class="next" onclick="plusSlides1(1)">❯</a>
       
-    <div class="mySlides">
-      <div class="numbertext">6 / 7</div>
-      <img src="./media/cards/IMG_7793.JPG" style="width:100%">
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot1" onclick="currentSlide(1)"></span> 
+        <span class="dot1" onclick="currentSlide(2)"></span> 
+        <span class="dot1" onclick="currentSlide(3)"></span> 
+        <span class="dot1" onclick="currentSlide(4)"></span> 
+        <span class="dot1" onclick="currentSlide(5)"></span> 
+        <span class="dot1" onclick="currentSlide(6)"></span> 
+        <span class="dot1" onclick="currentSlide(7)"></span> 
+      </div>
+      
+      
+      <script>
+      let SlideIndex1 = 1;
+      showSlides1(SlideIndex1);
+      
+      function plusSlides1(n) {
+        showSlides1(SlideIndex1 += n);
+      }
+      
+      function currentSlide1(n) {
+        showSlides1(SlideIndex1 = n);
+      }
+      
+      function showSlides1(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides1");
+        let dots = document.getElementsByClassName("dot1");
+        if (n > slides.length) {SlideIndex1 = 1}    
+        if (n < 1) {SlideIndex1 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[SlideIndex1-1].style.display = "block";  
+        dots[SlideIndex1-1].className += " active";
+      }
+      </script>
     </div>
 
-    <div class="mySlides">
-      <div class="numbertext">7 / 7</div>
-      <img src="./media/cards/IMG_7786.JPG" style="width:100%">
-    </div>
+
+  <br>
+  <br>
+  <br>
+  <!--totes - slidedeck-->
+  <div>
+    <a name="totes" id="totes"></a>
+    <div class="slideshow-container1">
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">1 / 9</div>
+        <img src="./media/crafts/bag3.jpg" style="width:100%">
+         <!--<div class="capt-text">Caption Text</div>-->
+      </div>
+    
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">2 / 9</div>
+        <img src="./media/crafts/bag7.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">3 / 9</div>
+        <img src="./media/crafts/bag9.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">4 / 9</div>
+        <img src="./media/crafts/bag4.jpg" style="width:100%">
+      </div>
+    
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">5 / 9</div>
+        <img src="./media/crafts/bag5.jpg" style="width:100%">
+      </div>
+        
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">6 / 9</div>
+        <img src="./media/crafts/bag6.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">7 / 9</div>
+        <img src="./media/crafts/bag1.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">8 / 9</div>
+        <img src="./media/crafts/bag8.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides4 fade" style="display: none;">
+        <div class="numbertext">9 / 9</div>
+        <img src="./media/crafts/bag2.jpg" style="width:100%">
+      </div>
       
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  
-    <div class="caption-container">
-      <p id="caption"></p>
+     
+      <a class="prev" onclick="plusSlides4(-1)">❮</a>
+      <a class="next" onclick="plusSlides4(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot4" onclick="currentSlide(1)"></span> 
+        <span class="dot4" onclick="currentSlide(2)"></span> 
+        <span class="dot4" onclick="currentSlide(3)"></span> 
+        <span class="dot4" onclick="currentSlide(4)"></span> 
+        <span class="dot4" onclick="currentSlide(5)"></span>
+        <span class="dot4" onclick="currentSlide(6)"></span>  
+        <span class="dot4" onclick="currentSlide(7)"></span>
+        <span class="dot4" onclick="currentSlide(8)"></span> 
+        <span class="dot4" onclick="currentSlide(9)"></span>  
+       
+      </div>
+      
+      
+      <script>
+      let SlideIndex4 = 1;
+      showSlides4(SlideIndex4);
+      
+      function plusSlides4(n) {
+        showSlides4(SlideIndex4 += n);
+      }
+      
+      function currentSlide4(n) {
+        showSlides4(SlideIndex4 = n);
+      }
+      
+      function showSlides4(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides4");
+        let dots = document.getElementsByClassName("dot4");
+        if (n > slides.length) {SlideIndex4 = 1}    
+        if (n < 1) {SlideIndex4 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[SlideIndex4-1].style.display = "block";  
+        dots[SlideIndex4-1].className += " active";
+      }
+      </script>
     </div>
   
-    <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7760.JPG" style="width:100%" onclick="currentSlide(1)" alt="Human Geography 1">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7766.JPG" style="width:100%" onclick="currentSlide(2)" alt="Human Geography 2">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7778.JPG" style="width:100%" onclick="currentSlide(3)" alt="Human Geography 3">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7782.JPG" style="width:100%" onclick="currentSlide(4)" alt="Human Geography 4">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7789.JPG" style="width:100%" onclick="currentSlide(5)" alt="Human Geography 5">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7793.JPG" style="width:100%" onclick="currentSlide(6)" alt="Human Geography 6">
-      </div>
-      <div class="column">
-        <img class="demo cursor" src="./media/cards/IMG_7786.JPG" style="width:100%" onclick="currentSlide(7)" alt="Physical Geography 1">
-      </div>    
-    </div>
-  </div>
-  
-  <script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-  }
-  </script>
-
-  </div>
-
-  <br><br><br><br>
-  <!--bags-->
-  <div class="row2" style="margin-left:7%;"> 
+    <br><br>
+  <!--bags gallary-->
+  <!-- <div class="row2" style="margin-left:7%;"> 
     <a name="totes" id="totes"></a>
     <div class="column4">
         <img src="./media/crafts/bag1.jpg" style="width:100%">
@@ -696,10 +843,9 @@ font-weight: lighter;
       <img src="./media/crafts/bag9.jpg" style="width:100%">
       <br><br>
     </div>
-    <!-- <p class="desc" style="margin-left:0%;">Tote bags with original watercolor art hand-applied with Iron transfers.<br>This was a creative solution to the fact that custom tote bag printing would <br>cost me $50 each bag. The materials for these come out to $5 - $10 per bag.</p> -->
-    </div>
+    </div> -->
 
-  <br><br><br><br>
+  <br>
   <!--shirts-->
   <div class="row2" style="margin-left:15%;"> 
     <a name="shirts" id="shirts"></a>
@@ -750,9 +896,9 @@ font-weight: lighter;
     <br>
     
     <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
+      <span class="dot2" onclick="currentSlide(1)"></span> 
+      <span class="dot2" onclick="currentSlide(2)"></span> 
+      <span class="dot2" onclick="currentSlide(3)"></span> 
     </div>
     
     <!--script for set 1-->
@@ -772,7 +918,7 @@ font-weight: lighter;
     function showSlides2(n) {
       let i;
       let slides = document.getElementsByClassName("mySlides2");
-      let dots = document.getElementsByClassName("dot");
+      let dots = document.getElementsByClassName("dot2");
       if (n > slides.length) {SlideIndex2 = 1}    
       if (n < 1) {SlideIndex2 = slides.length}
       for (i = 0; i < slides.length; i++) {
@@ -874,8 +1020,6 @@ font-weight: lighter;
 
 
 </div>
-
-
 
 
   <!--Multimedia-->
