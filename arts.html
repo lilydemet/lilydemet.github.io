@@ -137,6 +137,10 @@ font-weight: lighter;
   display: none;
 }
 
+.mySlides5 {
+  display: none;
+}
+
 .slideshow-container1 {
   max-width: 30%;
   position: relative;
@@ -261,6 +265,17 @@ font-weight: lighter;
   transition: background-color 0.6s ease;
 }
 
+.dot5 {
+  cursor: pointer;
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 10%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
 .active, .dot1:hover {
   background-color: #717171;
 }
@@ -277,6 +292,9 @@ font-weight: lighter;
   background-color: #717171;
 }
 
+.active, .dot5:hover {
+  background-color: #717171;
+}
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
@@ -845,6 +863,120 @@ font-weight: lighter;
     </div>
     </div> -->
 
+
+    <!--clothing - slidedeck-->
+    <!-- <div>
+      <div class="slideshow-container1">
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">1 / 11</div>
+          <img src="./media/shirts/IMG_7814.jpg" style="width:100%">
+        </div>
+      
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">2 / 11</div>
+          <img src="./media/shirts/IMG_7821.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">3 / 11</div>
+          <img src="./media/shirts/IMG_7829.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">4 / 11</div>
+          <img src="./media/shirts/IMG_7831.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">5 / 11</div>
+          <img src="./media/shirts/IMG_7836.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">6 / 11</div>
+          <img src="./media/shirts/IMG_7844.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">7 / 11</div>
+          <img src="./media/shirts/IMG_7850.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">8 / 11</div>
+          <img src="./media/shirts/IMG_7851.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">9 / 11</div>
+          <img src="./media/shirts/shirt-1.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">10 / 11</div>
+          <img src="./media/shirts/shirt-2a.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides5 fade" style="display: none;">
+          <div class="numbertext">11 / 11</div>
+          <img src="./media/shirts/shirt-2b.jpg" style="width:100%">
+        </div>
+      
+        
+        <a class="prev" onclick="plusSlides5(-1)">❮</a>
+        <a class="next" onclick="plusSlides5(1)">❯</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot5" onclick="currentSlide(1)"></span> 
+          <span class="dot5" onclick="currentSlide(2)"></span> 
+          <span class="dot5" onclick="currentSlide(3)"></span> 
+          <span class="dot5" onclick="currentSlide(4)"></span> 
+          <span class="dot5" onclick="currentSlide(5)"></span>
+          <span class="dot5" onclick="currentSlide(6)"></span>  
+          <span class="dot5" onclick="currentSlide(7)"></span>
+          <span class="dot5" onclick="currentSlide(8)"></span> 
+          <span class="dot5" onclick="currentSlide(9)"></span>  
+          <span class="dot5" onclick="currentSlide(10)"></span>  
+          <span class="dot5" onclick="currentSlide(11)"></span>  
+         
+        </div>
+        
+        
+        <script>
+        let SlideIndex5 = 1;
+        showSlides5(SlideIndex5);
+        
+        function plusSlides5(n) {
+          showSlides5(SlideIndex5 += n);
+        }
+        
+        function currentSlide5(n) {
+          showSlides5(SlideIndex5 = n);
+        }
+        
+        function showSlides5(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides5");
+          let dots = document.getElementsByClassName("dot5");
+          if (n > slides.length) {SlideIndex5 = 1}    
+          if (n < 1) {SlideIndex5 = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[SlideIndex5-1].style.display = "block";  
+          dots[SlideIndex5-1].className += " active";
+        }
+        </script>
+      </div> -->
+
+
+  <br><Br><br>
   <br>
   <!--shirts-->
   <div class="row2" style="margin-left:15%;"> 
@@ -852,12 +984,19 @@ font-weight: lighter;
 
     <div class="column4">
       <img src="./media/shirts/shirt-1.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7814.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7836.jpg" style="width:100%">
     </div><br>
     <div class="column4">
       <img src="./media/shirts/shirt-2b.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7821.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7844.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7851.jpg" style="width:100%">
     </div><br>
     <div class="column4">
       <img src="./media/shirts/shirt-2a.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7829.jpg" style="width:100%">
+      <img src="./media/shirts/IMG_7831.jpg" style="width:100%">
     </div><br>
 
   </div>
