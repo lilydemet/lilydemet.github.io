@@ -1009,74 +1009,8 @@ font-weight: lighter;
 <!--horns-->
 <div id="Horns" class="tabcontent">
 
-  <!--set 1-->
-  <div>
-  <div class="slideshow-container2">
-    <div class="mySlides2 fade" style="display: none;">
-      <div class="numbertext">1 / 3</div>
-      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
-      <!--<div class="capt-text">Caption Text</div>-->
-    </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
-    </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides2(-1)">❮</a>
-    <a class="next" onclick="plusSlides2(1)">❯</a>
-    
-    </div>
-    <br>
-    
-    <div style="text-align:center">
-      <span class="dot2" onclick="currentSlide(1)"></span> 
-      <span class="dot2" onclick="currentSlide(2)"></span> 
-      <span class="dot2" onclick="currentSlide(3)"></span> 
-    </div>
-    
-    <!--script for set 1-->
-    <!--function names and variables must be different than card deck and other horn sets-->
-    <script>
-    let SlideIndex2 = 1;
-    showSlides2(SlideIndex2);
-    
-    function plusSlides2(n) {
-      showSlides2(SlideIndex2 += n);
-    }
-    
-    function currentSlide2(n) {
-      showSlides2(SlideIndex2 = n);
-    }
-    
-    function showSlides2(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides2");
-      let dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) {SlideIndex2 = 1}    
-      if (n < 1) {SlideIndex2 = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[SlideIndex2-1].style.display = "block";  
-      dots[SlideIndex2-1].className += " active";
-    }
-    </script>
-  </div>
-
-  <br>
-
-   
-  <!--set 2-->
-  <div>
+   <!--set 2-->
+   <div>
     <div class="slideshow-container2">
       <div class="mySlides3 fade" style="display: none;">
         <div class="numbertext">1 / 4</div>
@@ -1147,6 +1081,70 @@ font-weight: lighter;
       </script>
   
       </div>
+  
+      <br><br>
+  <!--set 1-->
+  <div>
+  <div class="slideshow-container2">
+    <div class="mySlides2 fade" style="display: none;">
+      <div class="numbertext">1 / 3</div>
+      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
+      <!--<div class="capt-text">Caption Text</div>-->
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides2(-1)">❮</a>
+    <a class="next" onclick="plusSlides2(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot2" onclick="currentSlide(1)"></span> 
+      <span class="dot2" onclick="currentSlide(2)"></span> 
+      <span class="dot2" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <!--script for set 1-->
+    <!--function names and variables must be different than card deck and other horn sets-->
+    <script>
+    let SlideIndex2 = 1;
+    showSlides2(SlideIndex2);
+    
+    function plusSlides2(n) {
+      showSlides2(SlideIndex2 += n);
+    }
+    
+    function currentSlide2(n) {
+      showSlides2(SlideIndex2 = n);
+    }
+    
+    function showSlides2(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides2");
+      let dots = document.getElementsByClassName("dot2");
+      if (n > slides.length) {SlideIndex2 = 1}    
+      if (n < 1) {SlideIndex2 = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[SlideIndex2-1].style.display = "block";  
+      dots[SlideIndex2-1].className += " active";
+    }
+    </script>
+  </div>
   
   <br>
   <br>
