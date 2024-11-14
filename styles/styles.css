@@ -133,31 +133,3 @@ a:hover {
 }
 
 
-
-
-/*PARATAXIS*/
-/* two independent columns*/
-#left {
-    float: left;
-    width: 60%;
-    height: 100%;
-    /* overflow: scroll; */
-}
-#right {
-    float: left;
-    width: 30%;
-    height: 100%;
-    margin-right: 10%;
-    /* overflow: scroll; */
-}
-
-
-
-
-#field-image {
-    margin-left: 23.5%; 
-    margin-right: auto; 
-    width: 55%;
-}
-
-/*for image grids*/
