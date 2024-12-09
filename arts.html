@@ -349,8 +349,8 @@ font-weight: lighter;
   <button class="tablinks" onclick="openArts(event, 'Nudes')">Nudes</button>
   <button class="tablinks" onclick="openArts(event, 'Landscape')">Landscape</button>
 <button class="tablinks" onclick="openArts(event, 'Portraits')">Portraits</button>
-<button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS</button>
 <button class="tablinks" onclick="openArts(event, 'Horns')">Horns</button>
+<button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS for sale</button>
 <!-- <button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button> -->
 <!-- <button class="tablinks" onclick="openArts(event, 'Music')">Music</button> -->
 <!-- <button class="tablinks" onclick="openArts(event, 'Stories')">Stories</button> -->
@@ -668,10 +668,256 @@ font-weight: lighter;
       <a href="#portraits-top">return to top</a><br> 
     </div>
     
-<!--Prints-->
+
+
+<!--horns-->
+<div id="Horns" class="tabcontent">
+
+   <!--set 2-->
+   <div>
+    <div class="slideshow-container2">
+      <div class="mySlides3 fade" style="display: none;">
+        <div class="numbertext">1 / 4</div>
+        <img src="./media/crafts/horns-set2a.jpg" style="width:100%">
+        <!--<div class="capt-text">Caption Text</div>-->
+      </div>
+      
+      <div class="mySlides3 fade">
+        <div class="numbertext">2 / 4</div>
+        <img src="./media/crafts/horns-set2b.jpg" style="width:100%">
+      </div>
+      
+      <div class="mySlides3 fade">
+        <div class="numbertext">3 / 4</div>
+        <img src="./media/crafts/horns-set2c.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides3 fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="./media/crafts/horns-set2d.jpg" style="width:100%">
+      </div>
+      
+      <!--remember to update function name here-->
+      <a class="prev" onclick="plusSlides3(-1)">❮</a>
+      <a class="next" onclick="plusSlides3(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <!--dots must be unique class well in css head style for each deck-->
+      <div style="text-align:center">
+        <span class="dot3" onclick="currentSlide(1)"></span> 
+        <span class="dot3" onclick="currentSlide(2)"></span> 
+        <span class="dot3" onclick="currentSlide(3)"></span> 
+        <span class="dot3" onclick="currentSlide(4)"></span> 
+      </div>
+      
+
+      <!--script for set 2-->
+      <!--function names and slidindex variables must be unique-->
+      <script>
+      let slideIndex3 = 1;
+      showSlides3(slideIndex3);
+      
+      function plusSlides3(n) {
+        showSlides3(slideIndex3 += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides3(slideIndex3 = n);
+      }
+      
+      function showSlides3(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides3");
+        let dots = document.getElementsByClassName("dot3");
+        if (n > slides.length) {slideIndex3 = 1}    
+        if (n < 1) {slideIndex3 = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex3-1].style.display = "block";  
+        dots[slideIndex3-1].className += " active";
+      }
+      </script>
+  
+      </div>
+  
+      <br><br>
+  <!--set 1-->
+  <div>
+  <div class="slideshow-container2">
+    <div class="mySlides2 fade" style="display: none;">
+      <div class="numbertext">1 / 3</div>
+      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
+      <!--<div class="capt-text">Caption Text</div>-->
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides2 fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides2(-1)">❮</a>
+    <a class="next" onclick="plusSlides2(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot2" onclick="currentSlide(1)"></span> 
+      <span class="dot2" onclick="currentSlide(2)"></span> 
+      <span class="dot2" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <!--script for set 1-->
+    <!--function names and variables must be different than card deck and other horn sets-->
+    <script>
+    let SlideIndex2 = 1;
+    showSlides2(SlideIndex2);
+    
+    function plusSlides2(n) {
+      showSlides2(SlideIndex2 += n);
+    }
+    
+    function currentSlide2(n) {
+      showSlides2(SlideIndex2 = n);
+    }
+    
+    function showSlides2(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides2");
+      let dots = document.getElementsByClassName("dot2");
+      if (n > slides.length) {SlideIndex2 = 1}    
+      if (n < 1) {SlideIndex2 = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[SlideIndex2-1].style.display = "block";  
+      dots[SlideIndex2-1].className += " active";
+    }
+    </script>
+  </div>
+  
+  <br>
+  <br>
+  
+  <!--horns 3-->
+  <img src="./media/crafts/horns-set3s.jpg" style="width: 46%; margin-left:27%;">
+  <br><br>
+
+  
+
+
+</div>
+
+
+  <!--Multimedia-->
+  <div id="Multimedia" class="tabcontent">
+    <br><br><br>
+    <img src="./media/crafts/ram-horns.jpg" style="width:55%; margin-left:20%;">
+    <p class="desc" style="margin-left:20%;">Horns made from watercolor paper, thread, and acrylic paint</p>
+    <br><br><br>
+    <img src="./media/crafts/pudding.jpg" style="width:55%; margin-left:20%;">
+    <p class="desc" style="margin-left:20%;">Banoffee pudding with handmade custard and salted caramel</p>
+    <br><br><br>
+    <div class="row2" style="margin-left:22%;"> 
+        <div class="column2">
+            <img src="./media/crafts/cozies1.png" style="width:95%">
+            <p class="desc" style="margin-left:20%;">frypan cozies</p>
+            <br>
+            <br>
+            <br>
+            <img src="./media/crafts/mittens.jpg" style="width:95%">
+            <p class="desc" style="margin-left:15%;">knit mittens</p>
+            </div>
+        <div class="column2">
+            <img src="./media/crafts/cozies2.png" style="width:65%;">
+            <p class="desc">frypan cozies</p>
+             <br>
+             <br>
+             <br>
+             <img src="./media/crafts/hat2.jpg" style="width:75%;">
+             <p class="desc">crochet hat</p>
+           
+        </div>
+  </div>
+  <br><br><br>
+  <div style="margin-left:25%">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  </div>
+
+  <!--Cartography-->
+  <div id="Cartography" class="tabcontent">
+    <img src="./media/sample-maps/vancouver-island.png" style="width:65%; margin-left:17%">
+    <br><p style="margin-left:18%">For UBC Disaster Resilience Research Network Report. </p>
+    <br><br><br>
+    <img src="./media/sample-maps/pandemic-mapping.jpeg" style="width:65%; margin-left:17%">
+    <br><br><br><br>
+    <div>
+      <iframe src="./media/sample-maps/web-map/index.html" style="width:80%; height:640px; border:black; border-width:1pt; margin-left:12%;"> </iframe>
+  </div>
+    <br><br><br><br>
+    <img src="./media/sample-maps/YangtzeWeiHan.jpg" style="width:65%; margin-left:17%">
+    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <br><br>
+    <img src="./media/sample-maps/YellowRiverConservancy.jpg" style="width:67%; margin-left:15%">
+    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <br><br>
+    <img src="./media/sample-maps/LakeBasins.jpg" style="width:65%; margin-left:17%">
+    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <br><br>
+
+    <div class="row2" style="margin-left:25%;"> 
+        <div class="column2">
+            <img src="./media/sample-maps/Dams.jpg" style="width:200%">
+            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+            <br>
+            <img src="./media/sample-maps/Lancang-MekongRiver.jpg" style="width:207%">
+            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+            </div>
+    
+    </div>
+    <br><br>
+    <br><br>
+    <div  style="height:500px; width:720px; overflow:scroll; margin:auto">
+      <img src="./media/sample-maps/WAML_conference-map1.jpg" style="width: 100%">
+      </img>
+      <img src="./media/sample-maps/WAML_conference-map2.jpg" style="width: 100%">
+      </img>
+      </div>
+    <br><br>
+  
+
+  </div>
+
+
+  <!--Prints-->
  <div id="Prints" class="tabcontent">
   <a id="print-top"></a>
-  
+
+  <p>
+    <!-- , which is on stolen land of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish), and səlilwətaɬ (Tsleil-Waututh) Nations.  -->
+  I'm an artist-crafter local to Vancouver. If you'd like to purchase/exchange for my work, please email me at either overtherainbowarts@gmail.com or lilydemet.proton.me with your name, contact info, and request. Happy to mail my work for cost of shipping or exchange IRL in the city. 
+  <br><br>
+  Sets of 4 cards are valued at 5$; sets of 12 cards are valued at 10$. Tote bags are 5$ a piece while supplies last. Paper prints are $7 each, and I can print any existing work of mine. I'm to select commissions - please reach out if you have something in mind. Printed clothing is $10 a piece.  
+  <br><br>
+  I'm committed to keeping my prints as affordable as possible at a time when art can feel like a luxury item. I keep my production costs low by working with gleaned and appropriated materials. I print on found clothing, either gifted to me or salvaged from fabric recycling and alleyway free boxes. <i>If you have old shirts/sweatshirts lying around with minimal graphics on them I am more than happy to exchange some artwork of your choice for your old clothes. Cotton tops with fine (smooth) texture are best.</i>
+  <br><br>
+</p>
+
   <!--different prints menu-->
   <!-- <div>
   <a href="#cards" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -1044,241 +1290,6 @@ font-weight: lighter;
   <a href="#print-top">back to top</a>
   <br><br><br>
   </div>
-
-
-<!--horns-->
-<div id="Horns" class="tabcontent">
-
-   <!--set 2-->
-   <div>
-    <div class="slideshow-container2">
-      <div class="mySlides3 fade" style="display: none;">
-        <div class="numbertext">1 / 4</div>
-        <img src="./media/crafts/horns-set2a.jpg" style="width:100%">
-        <!--<div class="capt-text">Caption Text</div>-->
-      </div>
-      
-      <div class="mySlides3 fade">
-        <div class="numbertext">2 / 4</div>
-        <img src="./media/crafts/horns-set2b.jpg" style="width:100%">
-      </div>
-      
-      <div class="mySlides3 fade">
-        <div class="numbertext">3 / 4</div>
-        <img src="./media/crafts/horns-set2c.jpg" style="width:100%">
-      </div>
-  
-      <div class="mySlides3 fade">
-        <div class="numbertext">4 / 4</div>
-        <img src="./media/crafts/horns-set2d.jpg" style="width:100%">
-      </div>
-      
-      <!--remember to update function name here-->
-      <a class="prev" onclick="plusSlides3(-1)">❮</a>
-      <a class="next" onclick="plusSlides3(1)">❯</a>
-      
-      </div>
-      <br>
-      
-      <!--dots must be unique class well in css head style for each deck-->
-      <div style="text-align:center">
-        <span class="dot3" onclick="currentSlide(1)"></span> 
-        <span class="dot3" onclick="currentSlide(2)"></span> 
-        <span class="dot3" onclick="currentSlide(3)"></span> 
-        <span class="dot3" onclick="currentSlide(4)"></span> 
-      </div>
-      
-
-      <!--script for set 2-->
-      <!--function names and slidindex variables must be unique-->
-      <script>
-      let slideIndex3 = 1;
-      showSlides3(slideIndex3);
-      
-      function plusSlides3(n) {
-        showSlides3(slideIndex3 += n);
-      }
-      
-      function currentSlide(n) {
-        showSlides3(slideIndex3 = n);
-      }
-      
-      function showSlides3(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides3");
-        let dots = document.getElementsByClassName("dot3");
-        if (n > slides.length) {slideIndex3 = 1}    
-        if (n < 1) {slideIndex3 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex3-1].style.display = "block";  
-        dots[slideIndex3-1].className += " active";
-      }
-      </script>
-  
-      </div>
-  
-      <br><br>
-  <!--set 1-->
-  <div>
-  <div class="slideshow-container2">
-    <div class="mySlides2 fade" style="display: none;">
-      <div class="numbertext">1 / 3</div>
-      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
-      <!--<div class="capt-text">Caption Text</div>-->
-    </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
-    </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides2(-1)">❮</a>
-    <a class="next" onclick="plusSlides2(1)">❯</a>
-    
-    </div>
-    <br>
-    
-    <div style="text-align:center">
-      <span class="dot2" onclick="currentSlide(1)"></span> 
-      <span class="dot2" onclick="currentSlide(2)"></span> 
-      <span class="dot2" onclick="currentSlide(3)"></span> 
-    </div>
-    
-    <!--script for set 1-->
-    <!--function names and variables must be different than card deck and other horn sets-->
-    <script>
-    let SlideIndex2 = 1;
-    showSlides2(SlideIndex2);
-    
-    function plusSlides2(n) {
-      showSlides2(SlideIndex2 += n);
-    }
-    
-    function currentSlide2(n) {
-      showSlides2(SlideIndex2 = n);
-    }
-    
-    function showSlides2(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides2");
-      let dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) {SlideIndex2 = 1}    
-      if (n < 1) {SlideIndex2 = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[SlideIndex2-1].style.display = "block";  
-      dots[SlideIndex2-1].className += " active";
-    }
-    </script>
-  </div>
-  
-  <br>
-  <br>
-  
-  <!--horns 3-->
-  <img src="./media/crafts/horns-set3s.jpg" style="width: 46%; margin-left:27%;">
-  <br><br>
-
-  
-
-
-</div>
-
-
-  <!--Multimedia-->
-  <div id="Multimedia" class="tabcontent">
-    <br><br><br>
-    <img src="./media/crafts/ram-horns.jpg" style="width:55%; margin-left:20%;">
-    <p class="desc" style="margin-left:20%;">Horns made from watercolor paper, thread, and acrylic paint</p>
-    <br><br><br>
-    <img src="./media/crafts/pudding.jpg" style="width:55%; margin-left:20%;">
-    <p class="desc" style="margin-left:20%;">Banoffee pudding with handmade custard and salted caramel</p>
-    <br><br><br>
-    <div class="row2" style="margin-left:22%;"> 
-        <div class="column2">
-            <img src="./media/crafts/cozies1.png" style="width:95%">
-            <p class="desc" style="margin-left:20%;">frypan cozies</p>
-            <br>
-            <br>
-            <br>
-            <img src="./media/crafts/mittens.jpg" style="width:95%">
-            <p class="desc" style="margin-left:15%;">knit mittens</p>
-            </div>
-        <div class="column2">
-            <img src="./media/crafts/cozies2.png" style="width:65%;">
-            <p class="desc">frypan cozies</p>
-             <br>
-             <br>
-             <br>
-             <img src="./media/crafts/hat2.jpg" style="width:75%;">
-             <p class="desc">crochet hat</p>
-           
-        </div>
-  </div>
-  <br><br><br>
-  <div style="margin-left:25%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-  </div>
-
-  <!--Cartography-->
-  <div id="Cartography" class="tabcontent">
-    <img src="./media/sample-maps/vancouver-island.png" style="width:65%; margin-left:17%">
-    <br><p style="margin-left:18%">For UBC Disaster Resilience Research Network Report. </p>
-    <br><br><br>
-    <img src="./media/sample-maps/pandemic-mapping.jpeg" style="width:65%; margin-left:17%">
-    <br><br><br><br>
-    <div>
-      <iframe src="./media/sample-maps/web-map/index.html" style="width:80%; height:640px; border:black; border-width:1pt; margin-left:12%;"> </iframe>
-  </div>
-    <br><br><br><br>
-    <img src="./media/sample-maps/YangtzeWeiHan.jpg" style="width:65%; margin-left:17%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-    <br><br>
-    <img src="./media/sample-maps/YellowRiverConservancy.jpg" style="width:67%; margin-left:15%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-    <br><br>
-    <img src="./media/sample-maps/LakeBasins.jpg" style="width:65%; margin-left:17%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-    <br><br>
-
-    <div class="row2" style="margin-left:25%;"> 
-        <div class="column2">
-            <img src="./media/sample-maps/Dams.jpg" style="width:200%">
-            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-            <br>
-            <img src="./media/sample-maps/Lancang-MekongRiver.jpg" style="width:207%">
-            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-            </div>
-    
-    </div>
-    <br><br>
-    <br><br>
-    <div  style="height:500px; width:720px; overflow:scroll; margin:auto">
-      <img src="./media/sample-maps/WAML_conference-map1.jpg" style="width: 100%">
-      </img>
-      <img src="./media/sample-maps/WAML_conference-map2.jpg" style="width: 100%">
-      </img>
-      </div>
-    <br><br>
-  
-
-  </div>
-
 
   <!--page script-->
   <script>
