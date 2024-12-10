@@ -35,6 +35,50 @@ p {
     margin-left: 25%; */
 }
 
+
+/*paragraph text styling for NARROW phone screen*/
+@media screen and (max-width: 500px) {
+    p {
+      font-size: 11pt;
+      font-weight: 300;
+       line-height: 1.5;
+       text-align: left;
+          
+    }
+  }
+
+
+
+
+  div.column10 {
+    -ms-flex: 60%; 
+    flex: 60%;
+    max-width: 60%;
+    margin:auto;
+    padding: 0 2px;
+    } 
+  
+    /*main column takes full page width for NARROW display*/
+  @media screen and (max-width: 900px) {
+    div.column10 {
+      -ms-flex: 100%; 
+          flex: 100%;
+          max-width: 100%;
+          padding: 0 2px;
+    }
+  }
+  
+  
+  /*text blocks paragraph margins on computer WIDE screen*/
+  /*changed max-width to adjust page margins; using page margin properties in div column object broke sticky contents side nav*/
+  @media screen and (min-width: 701px) {
+    div.column10 {
+      -ms-flex: 100%; 
+          flex: 100%;
+          max-width: 55%;
+          padding: 0 20px;
+    }
+  }
 /* Paragraph title */
 .title {
 
