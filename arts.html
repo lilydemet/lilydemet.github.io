@@ -145,6 +145,10 @@
       display: none;
     }
 
+    .mySlides6 {
+      display: none;
+    }
+
     .slideshow-container1 {
       max-width: 100%;
       position: relative;
@@ -158,6 +162,13 @@
     }
 
     .slideshow-container3 {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+
+    .slideshow-container6 {
       max-width: 100%;
       position: relative;
       margin: auto;
@@ -288,6 +299,18 @@
       transition: background-color 0.6s ease;
     }
 
+
+    .dot6 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
     .active,
     .dot1:hover {
       background-color: #717171;
@@ -310,6 +333,12 @@
 
     .active,
     .dot5:hover {
+      background-color: #717171;
+    }
+
+
+    .active,
+    .dot6:hover {
       background-color: #717171;
     }
 
@@ -1076,34 +1105,131 @@
     <br>
 
 
-    
-
-
+  
     <!--stickers-->
     <div class="column10">
       <a name="stickers" id="stickers"></a>
       <div>
         <img src="./media/cards/20241122_102831.jpg" style="width:100%"></img>
       </div>
-      <p>Stickers are 2 for $5 or 5 for 10$.</p>
+      <p>Stickers are 2 for $5 or 5 for 10$. Dimensions range from 1.5" x 1.5" to 3" x 4".</p>
     </div>
 
-    <!--paper prints-->
-    <!-- <div class="column10">
-      <a name="paper-prints" id="paper-prints"></a>
-      <div>
+    <br><br><br>
 
+    <!--paper prints-->
+    <div class="column10">
+      <a name="paper-prints" id="paper-prints"></a>
+      <div style="width:60%; margin:auto;">
+        <a name="cards" id="cards"></a>
+        <div class="slideshow-container6">
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">1 / 8</div>
+            <img src="./media/prints/print1.jpg" style="width:100%">
+            <div class="capt-text">Print 1</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">2 / 8</div>
+            <img src="./media/prints/print2.jpg" style="width:100%">
+            <div class="capt-text">Print 2</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">3 / 8</div>
+            <img src="./media/prints/print3.jpg" style="width:100%">
+            <div class="capt-text">Print 3</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">4 / 8</div>
+            <img src="./media/prints/print4.jpg" style="width:100%">
+            <div class="capt-text">Print 4</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">5 / 8</div>
+            <img src="./media/prints/print5.jpg" style="width:100%">
+            <div class="capt-text">Print 5</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">6 / 8</div>
+            <img src="./media/prints/print6.jpg" style="width:100%">
+            <div class="capt-text">Print 6</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">7 / 8</div>
+            <img src="./media/prints/print7.jpg" style="width:100%">
+            <div class="capt-text">Print 7</div>
+          </div>
+
+          <div class="mySlides6 fade" style="display: none;">
+            <div class="numbertext">8 / 8</div>
+            <img src="./media/prints/print8.jpg" style="width:100%">
+            <div class="capt-text">Print 8</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides6(-1)">❮</a>
+          <a class="next" onclick="plusSlides6(1)">❯</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot6" onclick="currentSlide(1)"></span>
+          <span class="dot6" onclick="currentSlide(2)"></span>
+          <span class="dot6" onclick="currentSlide(3)"></span>
+          <span class="dot6" onclick="currentSlide(4)"></span>
+          <span class="dot6" onclick="currentSlide(5)"></span>
+          <span class="dot6" onclick="currentSlide(6)"></span>
+          <span class="dot6" onclick="currentSlide(7)"></span>
+          <span class="dot6" onclick="currentSlide(8)"></span>
+        </div>
+
+
+        <script>
+          let SlideIndex6 = 1;
+          showSlides6(SlideIndex6);
+
+          function plusSlides6(n) {
+            showSlides6(SlideIndex6 += n);
+          }
+
+          function currentSlide6(n) {
+            showSlides6(SlideIndex6 = n);
+          }
+
+          function showSlides6(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides6");
+            let dots = document.getElementsByClassName("dot6");
+            if (n > slides.length) { SlideIndex6 = 1 }
+            if (n < 1) { SlideIndex6 = slides.length }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[SlideIndex6 - 1].style.display = "block";
+            dots[SlideIndex6 - 1].className += " active";
+          }
+        </script>
       </div>
-      <p>Paper prints are $7 each, and I can print any existing work of mine. I'm to select commissions - please reach
-        out if you have something in mind.</p>
-    </div> -->
+
+      <p>Paper prints are $7 each, and I can print any existing work of mine. Dimensions are 8 1/2 x 11".</p>
+    </div>
+
+
+    <br><br><br>
 
 
     <!--clothing prints-->
     <div class="column10">
      
-      <!--clothing - slidedeck-->
-    <div>
+    <div style="width:60%; margin:auto;">
       <div class="slideshow-container1">
         <div class="mySlides5 fade" style="display: none;">
           <div class="numbertext">1 / 11</div>
@@ -1211,21 +1337,24 @@
           dots[SlideIndex5-1].className += " active";
         }
         </script>
-      </div>
-      <p>
-        Printed clothing is $10 a piece. I print on found clothing, either gifted to me or salvaged from fabric
-        recycling and alleyway free boxes. <i>If you have old shirts/sweatshirts lying around with minimal graphics on
-          them I am more than happy to exchange some artwork of your choice for your old clothes. Cotton tops with fine
-          (smooth) texture are best.</i>
-      </p>
+     
+     
 
     </div>
 
-<br><br><br>
+    <p>
+      Printed clothing is $10 a piece. I print on found clothing, either gifted to me or salvaged from fabric
+      recycling and alleyway free boxes. <i>If you have old shirts/sweatshirts lying around with minimal graphics on
+        them I am more than happy to exchange some artwork of your choice for your old clothes. Cotton tops with fine
+        (smooth) texture are best.</i>
+    </p>
+    </div>
+
+    <br><br><br>
 
     <!--totes - slidedeck-->
     <div class="column10">
-      <div style="width:60%">
+      <div style="width:60%; margin:auto;">
         <a name="totes" id="totes"></a>
         <div class="slideshow-container1">
           <div class="mySlides4 fade" style="display: none;">
@@ -1328,10 +1457,10 @@
     </div>
 
     <br><br>
- 
+    <br><br><br>
 
-    <br><Br><br>
-    <br>
+  
+  
     <!--shirts-->
     <!-- <img src="./media/shirts/pupshirt1.jpeg" style="margin-left:25%; width:50%">
 
