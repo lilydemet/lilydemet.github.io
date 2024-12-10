@@ -1,400 +1,421 @@
 <!DOCTYPE html>
+
 <head>
-    <link rel="stylesheet" href="./styles/styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arts</title>
-    <style>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arts</title>
+  <style>
+  
 
-    * {
-        box-sizing: border-box;
-      }
-       .row2 {
-        display: -ms-flexbox; 
-        display: flex;
-        -ms-flex-wrap: wrap; 
-        flex-wrap: wrap;
-        padding: 0 3px;
-      }
+    .row2 {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      padding: 0 3px;
+    }
+
+    .column2 {
+      -ms-flex: 25%;
+      /* IE10 */
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 4px;
+    }
+
+    .column3 {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+      max-width: 50%;
+      padding: 0 10px;
+    }
+
+    .column4 {
+      -ms-flex: 30%;
+      /* IE10 */
+      flex: 30%;
+      max-width: 30%;
+      padding: 0 4px;
+    }
+
+    .column2 img {
+      margin-top: 8px;
+      vertical-align: middle;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 700px) {
       .column2 {
-        -ms-flex: 25%; /* IE10 */
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 4px;
-      }
-
-      .column3 {
-        -ms-flex: 50%; /* IE10 */
+        -ms-flex: 50%;
         flex: 50%;
         max-width: 50%;
-        padding: 0 10px;
+      }
+    }
+
+
+
+    .tab {
+      overflow: hidden;
+      margin-left: 28%;
+      /* border: 1px solid #ccc;*/
+      /* background-color: #f7f5fc;*/
+    }
+
+
+    .tab button {
+      background-color: inherit;
+      float: auto;
+      border: 1px solid #ccc;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0s;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 17px;
+      font-weight: lighter;
+    }
+
+
+    .tab button:hover {
+      background-color: #dcdae3;
+    }
+
+
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+    }
+
+    .desc {
+      font-family: "Inconsolata";
+      font-size: 11pt;
+      font-weight: lighter;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+
+    /*styling for card set deck*/
+    img {
+      vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: arrow;
+    }
+
+    /* Slideshow container2 - for horns */
+    /* EACH SUBSEQUENT SLIDE DECK MUST BE DECLARED A NEW VARIABLE, AND SLIDE INDEX RENAMED AS WELL */
+
+    .mySlides1 {
+      display: none;
+    }
+
+
+    .mySlides2 {
+      display: none;
+    }
+
+    .mySlides3 {
+      display: none;
+    }
+
+    .mySlides4 {
+      display: none;
+    }
+
+    .mySlides5 {
+      display: none;
+    }
+
+    .slideshow-container1 {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    .slideshow-container2 {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    .slideshow-container3 {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.1s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: none;
+      /* animation-duration: 1.5s; */
+    }
+
+    @keyframes fade {
+      from {
+        opacity: .4
       }
 
-      .column4 {
-        -ms-flex: 30%; /* IE10 */
-        flex: 30%;
-        max-width: 30%;
-        padding: 0 4px;
+      to {
+        opacity: 1
       }
+    }
 
-      .column2 img {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
+    /* Caption text */
+    .capt-text {
+      color: #3a3330;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      padding: 2px 2px;
+      position: absolute;
+      bottom: 1px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+
+    .dot1 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .dot2 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot3 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+
+    .dot4 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .dot5 {
+      cursor: pointer;
+      height: 7px;
+      width: 7px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 10%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active,
+    .dot1:hover {
+      background-color: #717171;
+    }
+
+    .active,
+    .dot2:hover {
+      background-color: #717171;
+    }
+
+    .active,
+    .dot3:hover {
+      background-color: #717171;
+    }
+
+    .active,
+    .dot4:hover {
+      background-color: #717171;
+    }
+
+    .active,
+    .dot5:hover {
+      background-color: #717171;
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+
+      .prev,
+      .next,
+      .text {
+        font-size: 11px
       }
-      @media screen and (max-width: 700px) {
-        .column2 {
-          -ms-flex: 50%;
-          flex: 50%;
-          max-width: 50%;
-        }
-      }
+    }
 
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #36201a;
+      padding: 2px 16px;
+      color: white;
+    }
 
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-      .tab {
-  overflow: hidden;
-  margin-left:28%;
- /* border: 1px solid #ccc;*/
-   /* background-color: #f7f5fc;*/
-}
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
 
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+      opacity: 0.6;
+    }
 
-.tab button {
-  background-color: inherit;
-  float: auto;
- border: 1px solid #ccc;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0s;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 17px;
-font-weight: lighter;
-}
-
-
-.tab button:hover {
-  background-color: #dcdae3;
-}
-
-
-.tab button.active {
-  background-color: #ccc;
-}
-
-
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-}
-
-.desc {
-    font-family: "Inconsolata";
-    font-size: 11pt;
-    font-weight: lighter;
-    text-align: left;
-    text-transform: uppercase;
-}
-
-
-  /*styling for card set deck*/
-  img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: arrow;
-}
-
-/* Slideshow container2 - for horns */
-/* EACH SUBSEQUENT SLIDE DECK MUST BE DECLARED A NEW VARIABLE, AND SLIDE INDEX RENAMED AS WELL */
-
-.mySlides1 {
-  display: none;
-}
-
-
-.mySlides2 {
-  display: none;
-}
-
-.mySlides3 {
-  display: none;
-}
-
-.mySlides4 {
-  display: none;
-}
-
-.mySlides5 {
-  display: none;
-}
-
-.slideshow-container1 {
-  max-width: 30%;
-  position: relative;
-  margin: auto;
-}
-
-.slideshow-container2 {
-  max-width: 46%;
-  position: relative;
-  margin: auto;
-}
-
-.slideshow-container3 {
-  max-width: 53%;
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.1s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Fading animation */
-.fade {
-  animation-name: none;
-  /* animation-duration: 1.5s; */
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-/* Caption text */
-.capt-text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-
-.dot1 {
-  cursor: pointer;
-  height: 7px;
-  width: 7px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 10%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.dot2 {
-  cursor: pointer;
-  height: 7px;
-  width: 7px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 10%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-/* The dots/bullets/indicators */
-.dot3 {
-  cursor: pointer;
-  height: 7px;
-  width: 7px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 10%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-
-.dot4 {
-  cursor: pointer;
-  height: 7px;
-  width: 7px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 10%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.dot5 {
-  cursor: pointer;
-  height: 7px;
-  width: 7px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 10%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot1:hover {
-  background-color: #717171;
-}
-
-.active, .dot2:hover {
-  background-color: #717171;
-}
-
-.active, .dot3:hover {
-  background-color: #717171;
-}
-
-.active, .dot4:hover {
-  background-color: #717171;
-}
-
-.active, .dot5:hover {
-  background-color: #717171;
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #36201a;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-</style>
+    .active,
+    .demo:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
-<!--navigate elsewhere-->
-<p style="margin-left:3%;">
-        <a href="./index.html"> \\index </a><br>
-        <a href="./cv.html"> /cv </a><br>
-        <a href="./mapping.html"> /mapping </a>
-      </p>
-<br>
+  <!--navigate elsewhere-->
+  <p style="margin-left:3%;">
+    <a href="./index.html"> \\index </a><br>
+    <a href="./cv.html"> /cv </a><br>
+    <a href="./mapping.html"> /mapping </a>
+  </p>
+  <br>
 
-<!--tab menu-->
-<div class="tab">
-  <button class="tablinks" onclick="openArts(event, 'Yogis')">Yogis</button>
-  <button class="tablinks" onclick="openArts(event, 'Nudes')">Nudes</button>
-  <button class="tablinks" onclick="openArts(event, 'Landscape')">Landscape</button>
-<button class="tablinks" onclick="openArts(event, 'Portraits')">Portraits</button>
-<button class="tablinks" onclick="openArts(event, 'Horns')">Horns</button>
-<button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS for sale</button>
-<!-- <button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button> -->
-<!-- <button class="tablinks" onclick="openArts(event, 'Music')">Music</button> -->
-<!-- <button class="tablinks" onclick="openArts(event, 'Stories')">Stories</button> -->
-<!-- <button class="tablinks" onclick="openArts(event, 'Cartography')">Cartography</button> -->
-</div>
-<br><br>
+  <!--tab menu-->
+  <div class="tab">
+    <button class="tablinks" onclick="openArts(event, 'Yogis')">Yogis</button>
+    <button class="tablinks" onclick="openArts(event, 'Nudes')">Nudes</button>
+    <button class="tablinks" onclick="openArts(event, 'Landscape')">Landscape</button>
+    <button class="tablinks" onclick="openArts(event, 'Portraits')">Portraits</button>
+    <button class="tablinks" onclick="openArts(event, 'Horns')">Horns</button>
+    <button class="tablinks" onclick="openArts(event, 'Prints')">PRINTS for sale</button>
+    <!-- <button class="tablinks" onclick="openArts(event, 'Multimedia')">Multimedia</button> -->
+    <!-- <button class="tablinks" onclick="openArts(event, 'Music')">Music</button> -->
+    <!-- <button class="tablinks" onclick="openArts(event, 'Stories')">Stories</button> -->
+    <!-- <button class="tablinks" onclick="openArts(event, 'Cartography')">Cartography</button> -->
+  </div>
+  <br><br>
 
-<!--Yogis-->
-<div id="Yogis" class="tabcontent">
+  <!--Yogis-->
+  <div id="Yogis" class="tabcontent">
     <a name="yogis-top" id="yogis-top"></a>
-    <div class="row2" style="margin-left:10%;"> 
-        <div class="column2">
-            <img src="./media/art/yogis/Yoga-1.png" >
-            <img src="./media/art/yogis/Yoga-2.png" style="width:60%">
-            <img src="./media/art/yogis/Yoga-9.png">
-            <img src="./media/art/yogis/Yoga-5.png" style="width:70%">
-            <img src="./media/art/yogis/Yoga-17.png" style="width:85%">
-            <img src="./media/art/yogis/Yoga-15.png">
-            
-        </div>
-        <div class="column2">
-            <img src="./media/art/yogis/Yoga-3.png" style="width:90%">
-            <img src="./media/art/yogis/Yoga-6.png" style="width:90%">
-            <img src="./media/art/yogis/Yoga-11.png">
-            <img src="./media/art/yogis/Yoga-12.png" >
-            <img src="./media/art/yogis/Yoga-18.png">
-            <img src="./media/art/yogis/Yoga-8.png">
-            <img src="./media/art/yogis/Yoga-10.png">
-            
-        </div>
-        <div class="column2">
-            <img src="./media/art/yogis/Yoga-4.png" style="width:80%">
-            <img src="./media/art/yogis/Yoga-7.png" >
-            <img src="./media/art/yogis/Yoga-13.png" >
-            <img src="./media/art/yogis/Yoga-14.png" >
-            <img src="./media/art/yogis/Yoga-20.png">
-            <img src="./media/art/yogis/Yoga-16.png" >
-            
-        </div>
+    <div class="row2" style="margin-left:10%;">
+      <div class="column2">
+        <img src="./media/art/yogis/Yoga-1.png">
+        <img src="./media/art/yogis/Yoga-2.png" style="width:60%">
+        <img src="./media/art/yogis/Yoga-9.png">
+        <img src="./media/art/yogis/Yoga-5.png" style="width:70%">
+        <img src="./media/art/yogis/Yoga-17.png" style="width:85%">
+        <img src="./media/art/yogis/Yoga-15.png">
+
+      </div>
+      <div class="column2">
+        <img src="./media/art/yogis/Yoga-3.png" style="width:90%">
+        <img src="./media/art/yogis/Yoga-6.png" style="width:90%">
+        <img src="./media/art/yogis/Yoga-11.png">
+        <img src="./media/art/yogis/Yoga-12.png">
+        <img src="./media/art/yogis/Yoga-18.png">
+        <img src="./media/art/yogis/Yoga-8.png">
+        <img src="./media/art/yogis/Yoga-10.png">
+
+      </div>
+      <div class="column2">
+        <img src="./media/art/yogis/Yoga-4.png" style="width:80%">
+        <img src="./media/art/yogis/Yoga-7.png">
+        <img src="./media/art/yogis/Yoga-13.png">
+        <img src="./media/art/yogis/Yoga-14.png">
+        <img src="./media/art/yogis/Yoga-20.png">
+        <img src="./media/art/yogis/Yoga-16.png">
+
+      </div>
     </div>
     <a href="#yogis-top">return to top</a><br>
   </div>
-  
-<!--Nudes-->
+
+  <!--Nudes-->
   <div id="Nudes" class="tabcontent">
     <a name="nudes-top" id="nudes-top"></a>
     <br>
@@ -402,127 +423,127 @@ font-weight: lighter;
     <br><br><br><br><br>
 
     <!--figures-->
-    <div class="row2" style="margin-left:5%;"> 
-        <div class="column2">
-            <img src="./media/art/nudes/nude-1.jpg" style="width:84%">
-            <br>
-            <br>
-            <br>
-            <br>
-            </div>
-        <div class="column2">
-            <img src="./media/art/nudes/nude-2.jpg" style="width:87%">
-            <br>
-            <br>
-            <br>
-            <br>
-          </div>
-          <div class="column2">
-            <img src="./media/art/nudes/nude-5.jpg" style="width:85%">
-            <br>
-            <br>
-            <br>
-            <br>
-            </div>
-            <div class="column2">
-              <img src="./media/art/nudes/nude-3.jpg" style="width:80%">
-              <br>
-              <br>
-              <br>
-              <br>
-              </div>
-        </div>
+    <div class="row2" style="margin-left:5%;">
+      <div class="column2">
+        <img src="./media/art/nudes/nude-1.jpg" style="width:84%">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column2">
+        <img src="./media/art/nudes/nude-2.jpg" style="width:87%">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column2">
+        <img src="./media/art/nudes/nude-5.jpg" style="width:85%">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column2">
+        <img src="./media/art/nudes/nude-3.jpg" style="width:80%">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
 
-        <br><br><br>
-        <!--cnt-->
-        <img src="./media/art/nudes/cnt.png" style="width:40%; margin-left:30%">
-          
-        <br><br><br><br><br>
+    <br><br><br>
+    <!--cnt-->
+    <img src="./media/art/nudes/cnt.png" style="width:40%; margin-left:30%">
+
+    <br><br><br><br><br>
 
     <!--showoff-->
-    <div class="row2" style="margin-left:10%;"> 
+    <div class="row2" style="margin-left:10%;">
       <div class="column3">
         <img src="./media/art/nudes/showoff1.jpg" style="width:97%">
         <br>
         <br>
         <br>
         <br>
-        </div>
-        <div class="column3">
-          <img src="./media/art/nudes/tittytouch.jpg" style="width:68%">
-          <br>
-          <br>
-          <br>
-          <br>
-          </div>
+      </div>
+      <div class="column3">
+        <img src="./media/art/nudes/tittytouch.jpg" style="width:68%">
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
     </div>
 
     <br><br>
     <img src="./media/art/nudes/proud.jpg" style="width:27%; margin-left:33%">
-<br><br><br>
+    <br><br><br>
     <!--read sweater-->
     <img src="./media/art/nudes/showoff2.jpg" style="width:40%; margin-left:30%">
-<br><br><br><br><br>
+    <br><br><br><br><br>
 
 
 
 
-      <!--back-->
-      <img src="./media/art/nudes/nude-6.jpg" style="width:20%; margin-left:40%">
-      <br><br><Br><br>
-      
+    <!--back-->
+    <img src="./media/art/nudes/nude-6.jpg" style="width:20%; margin-left:40%">
+    <br><br><Br><br>
 
 
 
-        <!--more cnts-->
-        <div class="row2" style="margin-left:30%;"> 
-        <div class="column4">
-          <img src="./media/art/nudes/hand.jpg" style="width:100%">
-          </div>
-          <div class="column4">
-            <img src="./media/art/nudes/nails.jpg" style="width:91%">
-            </div>
 
-          </div>
-          <br><br><br>
-      
-
-          
-          
-
-          <br><br><br>
-        <!--2 chests-->
-        <div class="row2" style="margin-left:30%;"> 
-          <div class="column4">
-            <img src="./media/art/nudes/chest-4.jpg" style="width:100%">
-            </div>
-            <div class="column4">
-              <img src="./media/art/nudes/chest-5.jpg" style="width:92.5%">
-              </div>
-        
-          </div>
-          <br><br><br>
-
-      <!--legs-->
-      <img src="./media/art/nudes/legs.png" style="width:34%; margin-left:32%">
-      <br><br>
-      <br>
-         
-     
-        <!--horizontal ones-->
-      <div class="row2" style="margin-left:6%;"> 
-        <div class="column3">
-          <img src="./media/art/nudes/hand2.jpg" style="width:80%">
- 
-          </div>
-          <div class="column3">
-            <img src="./media/art/nudes/chest-6.jpg" style="width:88%">
-
-            </div>
-      
+    <!--more cnts-->
+    <div class="row2" style="margin-left:30%;">
+      <div class="column4">
+        <img src="./media/art/nudes/hand.jpg" style="width:100%">
+      </div>
+      <div class="column4">
+        <img src="./media/art/nudes/nails.jpg" style="width:91%">
       </div>
 
-      <br><br><br>
+    </div>
+    <br><br><br>
+
+
+
+
+
+    <br><br><br>
+    <!--2 chests-->
+    <div class="row2" style="margin-left:30%;">
+      <div class="column4">
+        <img src="./media/art/nudes/chest-4.jpg" style="width:100%">
+      </div>
+      <div class="column4">
+        <img src="./media/art/nudes/chest-5.jpg" style="width:92.5%">
+      </div>
+
+    </div>
+    <br><br><br>
+
+    <!--legs-->
+    <img src="./media/art/nudes/legs.png" style="width:34%; margin-left:32%">
+    <br><br>
+    <br>
+
+
+    <!--horizontal ones-->
+    <div class="row2" style="margin-left:6%;">
+      <div class="column3">
+        <img src="./media/art/nudes/hand2.jpg" style="width:80%">
+
+      </div>
+      <div class="column3">
+        <img src="./media/art/nudes/chest-6.jpg" style="width:88%">
+
+      </div>
+
+    </div>
+
+    <br><br><br>
     <!--frames-->
     <!-- <div class="row2" style="margin-left:6%;"> 
       <div class="column3">
@@ -542,7 +563,7 @@ font-weight: lighter;
     </div> -->
 
 
-     
+
 
     <br><br><br><br>
     <img src="./media/art/nudes/ourlady.png" style="width:40%; margin-left:27%">
@@ -550,13 +571,13 @@ font-weight: lighter;
     <img src="./media/art/nudes/nude-4.jpg" style="width:50%; margin-left:23%">
     <br><br><br><br>
     <img src="./media/art/nudes/surfacearea.jpg" style="width:32%; margin-left:30%">
-    
+
     <br>
     <a href="#nudes-top">return to top</a><br>
-    
+
   </div>
-  
-<!--Landscape-->
+
+  <!--Landscape-->
   <div id="Landscape" class="tabcontent">
     <img src="./media/art/landscape/mittens.png" style="width:70%; margin-left:15%;">
     <p class="desc" style="margin-left:15%;">Watercolor, 9.5" x 13.5" | 2017</p><br><br>
@@ -574,253 +595,252 @@ font-weight: lighter;
     <br>
     <img src="./media/art/landscape/mushrooms.jpg" style="width:50%; margin-left:25%;">
   </div>
-  
-<!--Portraits-->
+
+  <!--Portraits-->
   <div id="Portraits" class="tabcontent">
     <a name="portraits-top" id="portraits-top"></a>
-    <div class="row2" style="margin-left:28%;">   
-        <div class="column2">
-          <img src="./media/art/portrait/paintface.jpg" style="width:180%">
-            <p class="desc">Palette Knife, Oil on Wood, 2019</p>
-            <br><br>
-            <img src="./media/art/portrait/IMG_7857.JPG" style="width:185%">
-            <p class="desc">Acrylic on cardboard, 2024</p>
-            <br><br>
-            <img src="./media/art/portrait/renoir-study.jpg" style="width:185%">
-            <p class="desc">Oil on self-stretched canvas <br> 16" x 20"| 2017<br>
-            Study of Pierre-Auguste Renoir's <i>Jeanne Samary in a Low Necked Dress</i>
-            </p><br><br>
-            <img src="./media/art/portrait/portrait0.jpg" style="width:185%">
-            <p class="desc">Oil on canvas paper, 2019</p>
-            <br><br>
-            <img src="./media/art/portrait/self-portrait-7.jpg" style="width:160%">
-            <p class="desc">Acrylic on paper, 2023</p>
-            <br><br>
-            <img src="./media/art/portrait/self-portrait-6.jpg" style="width:180%">
-            <p class="desc">Palette Knife, Oil on Cardstock, 2019</p>
-            <br><br>
-          </div>
-        </div>
-        
-        <!--set1-->
-        <div class="row2" style="margin-left:23%;"> 
-          <div class="column4">
-            <img src="./media/art/portrait/self-portrait-2.jpg" style="width:98%">
-            <p class="desc">Oil on Canvas, 2018</p><br><br>
-              <br>
-              <br>
-              <br>
-              </div>
-          <div class="column4">
-            <img src="./media/art/portrait/selfportrait-1.jpeg" style="width:98%">
-              <p class="desc">Oil on canvas paper, 18" x 14" <br>2018</p>  
-            <br><br>
-              <br>
-              <br>
-            </div>
-          </div>
-
-          <br><br>
-
-        <!--set2-->
-        <div class="row2" style="margin-left:23%;"> 
-              <div class="column4">
-                <img src="./media/art/portrait/self-portrait-5.png" style="width:100%">
-              <p class="desc">Oil on Canvas, 2016</p>
-          
-                <br>
-                <br>
-                <br>
-                <br>
-                </div>
-                <div class="column4">
-                  <img src="./media/art/portrait/self-portrait-3.png" style="width:100%">
-               <p class="desc">Oil on Canvas, 2015</p>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  </div>
-
-          </div>
-
-          <br><br>
-        
-        <!--set3-->
-        <div class="row2" style="margin-left:23%;"> 
-              <div class="column4">
-                <img src="./media/art/portrait/paintface2.jpg" style="width:100%">
-              <p class="desc">Oil on Wood, 2019</p>
-                <br>
-                <br>
-                <br>
-                <br>
-                </div>
-                <div class="column4">
-                  <img src="./media/art/portrait/woman_with_glasses_detail1.png" style="width:100%">
-                  <p class="desc">Watercolor, 2016</p>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  </div>
-              </div>
-      <a href="#portraits-top">return to top</a><br> 
+    <div class="row2" style="margin-left:28%;">
+      <div class="column2">
+        <img src="./media/art/portrait/paintface.jpg" style="width:180%">
+        <p class="desc">Palette Knife, Oil on Wood, 2019</p>
+        <br><br>
+        <img src="./media/art/portrait/IMG_7857.JPG" style="width:185%">
+        <p class="desc">Acrylic on cardboard, 2024</p>
+        <br><br>
+        <img src="./media/art/portrait/renoir-study.jpg" style="width:185%">
+        <p class="desc">Oil on self-stretched canvas <br> 16" x 20"| 2017<br>
+          Study of Pierre-Auguste Renoir's <i>Jeanne Samary in a Low Necked Dress</i>
+        </p><br><br>
+        <img src="./media/art/portrait/portrait0.jpg" style="width:185%">
+        <p class="desc">Oil on canvas paper, 2019</p>
+        <br><br>
+        <img src="./media/art/portrait/self-portrait-7.jpg" style="width:160%">
+        <p class="desc">Acrylic on paper, 2023</p>
+        <br><br>
+        <img src="./media/art/portrait/self-portrait-6.jpg" style="width:180%">
+        <p class="desc">Palette Knife, Oil on Cardstock, 2019</p>
+        <br><br>
+      </div>
     </div>
-    
+
+    <!--set1-->
+    <div class="row2" style="margin-left:23%;">
+      <div class="column4">
+        <img src="./media/art/portrait/self-portrait-2.jpg" style="width:98%">
+        <p class="desc">Oil on Canvas, 2018</p><br><br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column4">
+        <img src="./media/art/portrait/selfportrait-1.jpeg" style="width:98%">
+        <p class="desc">Oil on canvas paper, 18" x 14" <br>2018</p>
+        <br><br>
+        <br>
+        <br>
+      </div>
+    </div>
+
+    <br><br>
+
+    <!--set2-->
+    <div class="row2" style="margin-left:23%;">
+      <div class="column4">
+        <img src="./media/art/portrait/self-portrait-5.png" style="width:100%">
+        <p class="desc">Oil on Canvas, 2016</p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column4">
+        <img src="./media/art/portrait/self-portrait-3.png" style="width:100%">
+        <p class="desc">Oil on Canvas, 2015</p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+    <br><br>
+
+    <!--set3-->
+    <div class="row2" style="margin-left:23%;">
+      <div class="column4">
+        <img src="./media/art/portrait/paintface2.jpg" style="width:100%">
+        <p class="desc">Oil on Wood, 2019</p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="column4">
+        <img src="./media/art/portrait/woman_with_glasses_detail1.png" style="width:100%">
+        <p class="desc">Watercolor, 2016</p>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+    <a href="#portraits-top">return to top</a><br>
+  </div>
 
 
-<!--horns-->
-<div id="Horns" class="tabcontent">
+  <!--horns-->
+  <div id="Horns" class="tabcontent">
 
-   <!--set 2-->
-   <div>
-    <div class="slideshow-container2">
-      <div class="mySlides3 fade" style="display: none;">
-        <div class="numbertext">1 / 4</div>
-        <img src="./media/crafts/horns-set2a.jpg" style="width:100%">
-        <!--<div class="capt-text">Caption Text</div>-->
-      </div>
-      
-      <div class="mySlides3 fade">
-        <div class="numbertext">2 / 4</div>
-        <img src="./media/crafts/horns-set2b.jpg" style="width:100%">
-      </div>
-      
-      <div class="mySlides3 fade">
-        <div class="numbertext">3 / 4</div>
-        <img src="./media/crafts/horns-set2c.jpg" style="width:100%">
-      </div>
-  
-      <div class="mySlides3 fade">
-        <div class="numbertext">4 / 4</div>
-        <img src="./media/crafts/horns-set2d.jpg" style="width:100%">
-      </div>
-      
-      <!--remember to update function name here-->
-      <a class="prev" onclick="plusSlides3(-1)">❮</a>
-      <a class="next" onclick="plusSlides3(1)">❯</a>
-      
+    <!--set 2-->
+    <div>
+      <div class="slideshow-container2">
+        <div class="mySlides3 fade" style="display: none;">
+          <div class="numbertext">1 / 4</div>
+          <img src="./media/crafts/horns-set2a.jpg" style="width:100%">
+          <!--<div class="capt-text">Caption Text</div>-->
+        </div>
+
+        <div class="mySlides3 fade">
+          <div class="numbertext">2 / 4</div>
+          <img src="./media/crafts/horns-set2b.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides3 fade">
+          <div class="numbertext">3 / 4</div>
+          <img src="./media/crafts/horns-set2c.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides3 fade">
+          <div class="numbertext">4 / 4</div>
+          <img src="./media/crafts/horns-set2d.jpg" style="width:100%">
+        </div>
+
+        <!--remember to update function name here-->
+        <a class="prev" onclick="plusSlides3(-1)">❮</a>
+        <a class="next" onclick="plusSlides3(1)">❯</a>
+
       </div>
       <br>
-      
+
       <!--dots must be unique class well in css head style for each deck-->
       <div style="text-align:center">
-        <span class="dot3" onclick="currentSlide(1)"></span> 
-        <span class="dot3" onclick="currentSlide(2)"></span> 
-        <span class="dot3" onclick="currentSlide(3)"></span> 
-        <span class="dot3" onclick="currentSlide(4)"></span> 
+        <span class="dot3" onclick="currentSlide(1)"></span>
+        <span class="dot3" onclick="currentSlide(2)"></span>
+        <span class="dot3" onclick="currentSlide(3)"></span>
+        <span class="dot3" onclick="currentSlide(4)"></span>
       </div>
-      
+
 
       <!--script for set 2-->
       <!--function names and slidindex variables must be unique-->
       <script>
-      let slideIndex3 = 1;
-      showSlides3(slideIndex3);
-      
-      function plusSlides3(n) {
-        showSlides3(slideIndex3 += n);
-      }
-      
-      function currentSlide(n) {
-        showSlides3(slideIndex3 = n);
-      }
-      
-      function showSlides3(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides3");
-        let dots = document.getElementsByClassName("dot3");
-        if (n > slides.length) {slideIndex3 = 1}    
-        if (n < 1) {slideIndex3 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
+        let slideIndex3 = 1;
+        showSlides3(slideIndex3);
+
+        function plusSlides3(n) {
+          showSlides3(slideIndex3 += n);
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
+
+        function currentSlide(n) {
+          showSlides3(slideIndex3 = n);
         }
-        slides[slideIndex3-1].style.display = "block";  
-        dots[slideIndex3-1].className += " active";
-      }
+
+        function showSlides3(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides3");
+          let dots = document.getElementsByClassName("dot3");
+          if (n > slides.length) { slideIndex3 = 1 }
+          if (n < 1) { slideIndex3 = slides.length }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex3 - 1].style.display = "block";
+          dots[slideIndex3 - 1].className += " active";
+        }
       </script>
-  
+
+    </div>
+
+    <br><br>
+    <!--set 1-->
+    <div>
+      <div class="slideshow-container2">
+        <div class="mySlides2 fade" style="display: none;">
+          <div class="numbertext">1 / 3</div>
+          <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
+          <!--<div class="capt-text">Caption Text</div>-->
+        </div>
+
+        <div class="mySlides2 fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
+        </div>
+
+        <div class="mySlides2 fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides2(-1)">❮</a>
+        <a class="next" onclick="plusSlides2(1)">❯</a>
+
       </div>
-  
-      <br><br>
-  <!--set 1-->
-  <div>
-  <div class="slideshow-container2">
-    <div class="mySlides2 fade" style="display: none;">
-      <div class="numbertext">1 / 3</div>
-      <img src="./media/crafts/horns-set1a.jpg" style="width:100%">
-      <!--<div class="capt-text">Caption Text</div>-->
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot2" onclick="currentSlide(1)"></span>
+        <span class="dot2" onclick="currentSlide(2)"></span>
+        <span class="dot2" onclick="currentSlide(3)"></span>
+      </div>
+
+      <!--script for set 1-->
+      <!--function names and variables must be different than card deck and other horn sets-->
+      <script>
+        let SlideIndex2 = 1;
+        showSlides2(SlideIndex2);
+
+        function plusSlides2(n) {
+          showSlides2(SlideIndex2 += n);
+        }
+
+        function currentSlide2(n) {
+          showSlides2(SlideIndex2 = n);
+        }
+
+        function showSlides2(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides2");
+          let dots = document.getElementsByClassName("dot2");
+          if (n > slides.length) { SlideIndex2 = 1 }
+          if (n < 1) { SlideIndex2 = slides.length }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[SlideIndex2 - 1].style.display = "block";
+          dots[SlideIndex2 - 1].className += " active";
+        }
+      </script>
     </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="./media/crafts/horns-set1b.jpg" style="width:100%">
-    </div>
-    
-    <div class="mySlides2 fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="./media/crafts/horns-set1c.jpg" style="width:100%">
-    </div>
-    
-    <a class="prev" onclick="plusSlides2(-1)">❮</a>
-    <a class="next" onclick="plusSlides2(1)">❯</a>
-    
-    </div>
+
     <br>
-    
-    <div style="text-align:center">
-      <span class="dot2" onclick="currentSlide(1)"></span> 
-      <span class="dot2" onclick="currentSlide(2)"></span> 
-      <span class="dot2" onclick="currentSlide(3)"></span> 
-    </div>
-    
-    <!--script for set 1-->
-    <!--function names and variables must be different than card deck and other horn sets-->
-    <script>
-    let SlideIndex2 = 1;
-    showSlides2(SlideIndex2);
-    
-    function plusSlides2(n) {
-      showSlides2(SlideIndex2 += n);
-    }
-    
-    function currentSlide2(n) {
-      showSlides2(SlideIndex2 = n);
-    }
-    
-    function showSlides2(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides2");
-      let dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) {SlideIndex2 = 1}    
-      if (n < 1) {SlideIndex2 = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[SlideIndex2-1].style.display = "block";  
-      dots[SlideIndex2-1].className += " active";
-    }
-    </script>
+    <br>
+
+    <!--horns 3-->
+    <img src="./media/crafts/horns-set3s.jpg" style="width: 46%; margin-left:27%;">
+    <br><br>
+
+
+
+
   </div>
-  
-  <br>
-  <br>
-  
-  <!--horns 3-->
-  <img src="./media/crafts/horns-set3s.jpg" style="width: 46%; margin-left:27%;">
-  <br><br>
-
-  
-
-
-</div>
 
 
   <!--Multimedia-->
@@ -832,323 +852,258 @@ font-weight: lighter;
     <img src="./media/crafts/pudding.jpg" style="width:55%; margin-left:20%;">
     <p class="desc" style="margin-left:20%;">Banoffee pudding with handmade custard and salted caramel</p>
     <br><br><br>
-    <div class="row2" style="margin-left:22%;"> 
-        <div class="column2">
-            <img src="./media/crafts/cozies1.png" style="width:95%">
-            <p class="desc" style="margin-left:20%;">frypan cozies</p>
-            <br>
-            <br>
-            <br>
-            <img src="./media/crafts/mittens.jpg" style="width:95%">
-            <p class="desc" style="margin-left:15%;">knit mittens</p>
-            </div>
-        <div class="column2">
-            <img src="./media/crafts/cozies2.png" style="width:65%;">
-            <p class="desc">frypan cozies</p>
-             <br>
-             <br>
-             <br>
-             <img src="./media/crafts/hat2.jpg" style="width:75%;">
-             <p class="desc">crochet hat</p>
-           
-        </div>
-  </div>
-  <br><br><br>
-  <div style="margin-left:25%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
+    <div class="row2" style="margin-left:22%;">
+      <div class="column2">
+        <img src="./media/crafts/cozies1.png" style="width:95%">
+        <p class="desc" style="margin-left:20%;">frypan cozies</p>
+        <br>
+        <br>
+        <br>
+        <img src="./media/crafts/mittens.jpg" style="width:95%">
+        <p class="desc" style="margin-left:15%;">knit mittens</p>
+      </div>
+      <div class="column2">
+        <img src="./media/crafts/cozies2.png" style="width:65%;">
+        <p class="desc">frypan cozies</p>
+        <br>
+        <br>
+        <br>
+        <img src="./media/crafts/hat2.jpg" style="width:75%;">
+        <p class="desc">crochet hat</p>
+
+      </div>
+    </div>
+    <br><br><br>
+    <div style="margin-left:25%">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/hwNLyMJFaM8?si=wCES_gkZn7vanC9v"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
   </div>
 
   <!--Cartography-->
   <div id="Cartography" class="tabcontent">
     <img src="./media/sample-maps/vancouver-island.png" style="width:65%; margin-left:17%">
-    <br><p style="margin-left:18%">For UBC Disaster Resilience Research Network Report. </p>
+    <br>
+    <p style="margin-left:18%">For UBC Disaster Resilience Research Network Report. </p>
     <br><br><br>
     <img src="./media/sample-maps/pandemic-mapping.jpeg" style="width:65%; margin-left:17%">
     <br><br><br><br>
     <div>
-      <iframe src="./media/sample-maps/web-map/index.html" style="width:80%; height:640px; border:black; border-width:1pt; margin-left:12%;"> </iframe>
-  </div>
+      <iframe src="./media/sample-maps/web-map/index.html"
+        style="width:80%; height:640px; border:black; border-width:1pt; margin-left:12%;"> </iframe>
+    </div>
     <br><br><br><br>
     <img src="./media/sample-maps/YangtzeWeiHan.jpg" style="width:65%; margin-left:17%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <p class="desc" style="margin-left:17%">Reference map made for <a
+        href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An
+          ecological of modern china</i></a></p>
     <br><br>
     <img src="./media/sample-maps/YellowRiverConservancy.jpg" style="width:67%; margin-left:15%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <p class="desc" style="margin-left:17%">Reference map made for <a
+        href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An
+          ecological of modern china</i></a></p>
     <br><br>
     <img src="./media/sample-maps/LakeBasins.jpg" style="width:65%; margin-left:17%">
-    <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
+    <p class="desc" style="margin-left:17%">Reference map made for <a
+        href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An
+          ecological of modern china</i></a></p>
     <br><br>
 
-    <div class="row2" style="margin-left:25%;"> 
-        <div class="column2">
-            <img src="./media/sample-maps/Dams.jpg" style="width:200%">
-            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-            <br>
-            <img src="./media/sample-maps/Lancang-MekongRiver.jpg" style="width:207%">
-            <p class="desc" style="margin-left:17%">Reference map made for <a href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/" target="_blank"><i>An ecological of modern china</i></a></p>
-            </div>
-    
+    <div class="row2" style="margin-left:25%;">
+      <div class="column2">
+        <img src="./media/sample-maps/Dams.jpg" style="width:200%">
+        <p class="desc" style="margin-left:17%">Reference map made for <a
+            href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/"
+            target="_blank"><i>An ecological of modern china</i></a></p>
+        <br>
+        <img src="./media/sample-maps/Lancang-MekongRiver.jpg" style="width:207%">
+        <p class="desc" style="margin-left:17%">Reference map made for <a
+            href="https://uwapress.uw.edu/book/9780295751719/an-ecological-history-of-modern-china/"
+            target="_blank"><i>An ecological of modern china</i></a></p>
+      </div>
+
     </div>
     <br><br>
     <br><br>
-    <div  style="height:500px; width:720px; overflow:scroll; margin:auto">
+    <div style="height:500px; width:720px; overflow:scroll; margin:auto">
       <img src="./media/sample-maps/WAML_conference-map1.jpg" style="width: 100%">
       </img>
       <img src="./media/sample-maps/WAML_conference-map2.jpg" style="width: 100%">
       </img>
-      </div>
+    </div>
     <br><br>
-  
+
 
   </div>
 
 
   <!--Prints-->
- <div id="Prints" class="tabcontent">
-  <a id="print-top"></a>
+  <div id="Prints" class="tabcontent">
+    <a id="print-top"></a>
 
-  <p>
-    <!-- , which is on stolen land of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish), and səlilwətaɬ (Tsleil-Waututh) Nations.  -->
-  I'm an artist-crafter local to Vancouver. If you'd like to purchase/exchange for my work, please email me at either overtherainbowarts@gmail.com or lilydemet.proton.me with your name, contact info, and request. Happy to mail my work for cost of shipping or exchange IRL in the city. 
-  <br><br>
-  Sets of 4 cards are valued at 5$; sets of 12 cards are valued at 10$. Tote bags are 5$ a piece while supplies last. Paper prints are $7 each, and I can print any existing work of mine. I'm to select commissions - please reach out if you have something in mind. Printed clothing is $10 a piece.  
-  <br><br>
-  I'm committed to keeping my prints as affordable as possible at a time when art can feel like a luxury item. I keep my production costs low by working with gleaned and appropriated materials. I print on found clothing, either gifted to me or salvaged from fabric recycling and alleyway free boxes. <i>If you have old shirts/sweatshirts lying around with minimal graphics on them I am more than happy to exchange some artwork of your choice for your old clothes. Cotton tops with fine (smooth) texture are best.</i>
-  <br><br>
-</p>
+    <!--intro text-->
+    <div class="column10">
+      <p>
+        <!-- , which is on stolen land of the xʷməθkʷəy̓əm (Musqueam), Sḵwx̱wú7mesh (Squamish), and səlilwətaɬ (Tsleil-Waututh) Nations.  -->
+        I'm an artist-crafter local to Vancouver. If you'd like to purchase/exchange for my work, please email me at
+        either overtherainbowarts@gmail.com or lilydemet.proton.me with your name, contact info, and request. Happy to
+        mail my work for cost of shipping or exchange IRL in the city. I am open to select commissions - please reach
+        out if you have something in mind. At a time when art can feel like a luxury, I maintain accessible prices by
+        working with gleaned and appropriated materials. My items are therefore imperfect and bear the marks of the
+        machines with whom I collaborated in the making.
+        <br>
+           <br>
+      </p>
 
-  <!--different prints menu-->
-  <!-- <div>
-  <a href="#cards" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 19px; font-weight: lighter;">>cards</a><br>
-  <a href="#totes" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 19px; font-weight: lighter;">>totes</a><br>
-  <a href="#shirts" style="margin-left:20%; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 19px; font-weight: lighter;">>shirts</a><br>
-  </div> -->
-  <br>
-
-  <!--cards-->
-  <div>
-    <a name="cards" id="cards"></a>
-    <div class="slideshow-container3">
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">1 / 7</div>
-        <img src="./media/cards/IMG_7760.JPG" style="width:100%">
-         <!--<div class="capt-text">Caption Text</div>-->
+    <!--different prints menu-->
+      <!-- <div>
+        <a href="#cards" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px; font-weight: lighter;">>cards</a><br>
+        <a href="#totes" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px; font-weight: lighter;">>totes</a><br>
+         <a href="#stickers" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px; font-weight: lighter;">>stickers</a><br>
+        <a href="#shirts" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px; font-weight: lighter;">>clothing</a><br>
+         <a href="#paper-prints" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 16px; font-weight: lighter;">>paper prints</a><br>
       </div>
-    
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">2 / 7</div>
-        <img src="./media/cards/IMG_7766.JPG" style="width:100%">
-      </div>
-    
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">3 / 7</div>
-        <img src="./media/cards/IMG_7778.JPG" style="width:100%">
-      </div>
-        
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">4 / 7</div>
-        <img src="./media/cards/IMG_7782.JPG" style="width:100%">
-      </div>
-    
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">5 / 7</div>
-        <img src="./media/cards/IMG_7789.JPG" style="width:100%">
-      </div>
-        
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">6 / 7</div>
-        <img src="./media/cards/IMG_7793.JPG" style="width:100%">
-      </div>
-  
-      <div class="mySlides1 fade" style="display: none;">
-        <div class="numbertext">7 / 7</div>
-        <img src="./media/cards/IMG_7786.JPG" style="width:100%">
-      </div>
-      
-     
-      <a class="prev" onclick="plusSlides1(-1)">❮</a>
-      <a class="next" onclick="plusSlides1(1)">❯</a>
-      
-      </div>
-      <br>
-      
-      <div style="text-align:center">
-        <span class="dot1" onclick="currentSlide(1)"></span> 
-        <span class="dot1" onclick="currentSlide(2)"></span> 
-        <span class="dot1" onclick="currentSlide(3)"></span> 
-        <span class="dot1" onclick="currentSlide(4)"></span> 
-        <span class="dot1" onclick="currentSlide(5)"></span> 
-        <span class="dot1" onclick="currentSlide(6)"></span> 
-        <span class="dot1" onclick="currentSlide(7)"></span> 
-      </div>
-      
-      
-      <script>
-      let SlideIndex1 = 1;
-      showSlides1(SlideIndex1);
-      
-      function plusSlides1(n) {
-        showSlides1(SlideIndex1 += n);
-      }
-      
-      function currentSlide1(n) {
-        showSlides1(SlideIndex1 = n);
-      }
-      
-      function showSlides1(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides1");
-        let dots = document.getElementsByClassName("dot1");
-        if (n > slides.length) {SlideIndex1 = 1}    
-        if (n < 1) {SlideIndex1 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[SlideIndex1-1].style.display = "block";  
-        dots[SlideIndex1-1].className += " active";
-      }
-      </script>
-    </div>
-
-
-  <br>
-  <br>
-  <br>
-  <!--totes - slidedeck-->
-  <div>
-    <a name="totes" id="totes"></a>
-    <div class="slideshow-container1">
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">1 / 9</div>
-        <img src="./media/crafts/bag3.jpg" style="width:100%">
-         <!--<div class="capt-text">Caption Text</div>-->
-      </div>
-    
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">2 / 9</div>
-        <img src="./media/crafts/bag7.jpg" style="width:100%">
-      </div>
-    
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">3 / 9</div>
-        <img src="./media/crafts/bag9.jpg" style="width:100%">
-      </div>
-        
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">4 / 9</div>
-        <img src="./media/crafts/bag4.jpg" style="width:100%">
-      </div>
-    
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">5 / 9</div>
-        <img src="./media/crafts/bag5.jpg" style="width:100%">
-      </div>
-        
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">6 / 9</div>
-        <img src="./media/crafts/bag6.jpg" style="width:100%">
-      </div>
-  
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">7 / 9</div>
-        <img src="./media/crafts/bag1.jpg" style="width:100%">
+       -->
+       <br>
       </div>
 
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">8 / 9</div>
-        <img src="./media/crafts/bag8.jpg" style="width:100%">
-      </div>
+ 
 
-      <div class="mySlides4 fade" style="display: none;">
-        <div class="numbertext">9 / 9</div>
-        <img src="./media/crafts/bag2.jpg" style="width:100%">
-      </div>
-      
-     
-      <a class="prev" onclick="plusSlides4(-1)">❮</a>
-      <a class="next" onclick="plusSlides4(1)">❯</a>
-      
-      </div>
-      <br>
-      
-      <div style="text-align:center">
-        <span class="dot4" onclick="currentSlide(1)"></span> 
-        <span class="dot4" onclick="currentSlide(2)"></span> 
-        <span class="dot4" onclick="currentSlide(3)"></span> 
-        <span class="dot4" onclick="currentSlide(4)"></span> 
-        <span class="dot4" onclick="currentSlide(5)"></span>
-        <span class="dot4" onclick="currentSlide(6)"></span>  
-        <span class="dot4" onclick="currentSlide(7)"></span>
-        <span class="dot4" onclick="currentSlide(8)"></span> 
-        <span class="dot4" onclick="currentSlide(9)"></span>  
-       
-      </div>
-      
-      
-      <script>
-      let SlideIndex4 = 1;
-      showSlides4(SlideIndex4);
-      
-      function plusSlides4(n) {
-        showSlides4(SlideIndex4 += n);
-      }
-      
-      function currentSlide4(n) {
-        showSlides4(SlideIndex4 = n);
-      }
-      
-      function showSlides4(n) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides4");
-        let dots = document.getElementsByClassName("dot4");
-        if (n > slides.length) {SlideIndex4 = 1}    
-        if (n < 1) {SlideIndex4 = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-        }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[SlideIndex4-1].style.display = "block";  
-        dots[SlideIndex4-1].className += " active";
-      }
-      </script>
-    </div>
-  
-    <br><br>
-  <!--bags gallary-->
-  <!-- <div class="row2" style="margin-left:7%;"> 
-    <a name="totes" id="totes"></a>
-    <div class="column4">
-        <img src="./media/crafts/bag1.jpg" style="width:100%">
-        <img src="./media/crafts/bag2.jpg" style="width:100%">
-        <img src="./media/crafts/bag3.jpg" style="width:100%">
-        <br><br>
+    <!--cards-->
+    <div class="column10">
+      <div>
+        <a name="cards" id="cards"></a>
+        <div class="slideshow-container3">
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">1 / 7</div>
+            <img src="./media/cards/20241209_154643.jpg" style="width:100%">
+            <div class="capt-text">Assorted Titties</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">2 / 7</div>
+            <img src="./media/cards/20241209_154932.jpg" style="width:100%">
+            <div class="capt-text">Human Geography</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">3 / 7</div>
+            <img src="./media/cards/20241209_154048.jpg" style="width:100%">
+            <div class="capt-text">More-than-human Geography</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">4 / 7</div>
+            <img src="./media/cards/20241209_154247.jpg" style="width:100%">
+            <div class="capt-text">Assorted Cunts</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">5 / 7</div>
+            <img src="./media/cards/20241209_154541.jpg" style="width:100%">
+            <div class="capt-text">Urban Geography</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">6 / 7</div>
+            <img src="./media/cards/IMG_7793.JPG" style="width:100%">
+            <div class="capt-text">Yoginis</div>
+          </div>
+
+          <div class="mySlides1 fade" style="display: none;">
+            <div class="numbertext">7 / 7</div>
+            <img src="./media/cards/IMG_7766.JPG" style="width:100%">
+            <div class="capt-text">Vertical Portraits</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides1(-1)">❮</a>
+          <a class="next" onclick="plusSlides1(1)">❯</a>
+
         </div>
-        <div class="column4">
-          <img src="./media/crafts/bag4.jpg" style="width:100%">
-          <img src="./media/crafts/bag5.jpg" style="width:100%">
-          <img src="./media/crafts/bag6.jpg" style="width:100%">
-          <br><br>
-          </div>            
-    <div class="column4">
-      <img src="./media/crafts/bag7.jpg" style="width:100%">
-      <img src="./media/crafts/bag8.jpg" style="width:100%">
-      <img src="./media/crafts/bag9.jpg" style="width:100%">
-      <br><br>
+        <br>
+
+        <div style="text-align:center">
+          <span class="dot1" onclick="currentSlide(1)"></span>
+          <span class="dot1" onclick="currentSlide(2)"></span>
+          <span class="dot1" onclick="currentSlide(3)"></span>
+          <span class="dot1" onclick="currentSlide(4)"></span>
+          <span class="dot1" onclick="currentSlide(5)"></span>
+          <span class="dot1" onclick="currentSlide(6)"></span>
+          <span class="dot1" onclick="currentSlide(7)"></span>
+        </div>
+
+
+        <script>
+          let SlideIndex1 = 1;
+          showSlides1(SlideIndex1);
+
+          function plusSlides1(n) {
+            showSlides1(SlideIndex1 += n);
+          }
+
+          function currentSlide1(n) {
+            showSlides1(SlideIndex1 = n);
+          }
+
+          function showSlides1(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides1");
+            let dots = document.getElementsByClassName("dot1");
+            if (n > slides.length) { SlideIndex1 = 1 }
+            if (n < 1) { SlideIndex1 = slides.length }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[SlideIndex1 - 1].style.display = "block";
+            dots[SlideIndex1 - 1].className += " active";
+          }
+        </script>
+      </div>
+      <p>Sets of 4 cards are valued at 5$; sets of 12 cards are valued at 15$.</p>
     </div>
+    <br>
+    <br>
+    <br>
+
+
+    
+
+
+    <!--stickers-->
+    <div class="column10">
+      <a name="stickers" id="stickers"></a>
+      <div>
+        <img src="./media/cards/20241122_102831.jpg" style="width:100%"></img>
+      </div>
+      <p>Stickers are 2 for $5 or 5 for 10$.</p>
+    </div>
+
+    <!--paper prints-->
+    <!-- <div class="column10">
+      <a name="paper-prints" id="paper-prints"></a>
+      <div>
+
+      </div>
+      <p>Paper prints are $7 each, and I can print any existing work of mine. I'm to select commissions - please reach
+        out if you have something in mind.</p>
     </div> -->
 
 
-    <!--clothing - slidedeck-->
-    <!-- <div>
+    <!--clothing prints-->
+    <div class="column10">
+     
+      <!--clothing - slidedeck-->
+    <div>
       <div class="slideshow-container1">
         <div class="mySlides5 fade" style="display: none;">
           <div class="numbertext">1 / 11</div>
@@ -1256,39 +1211,155 @@ font-weight: lighter;
           dots[SlideIndex5-1].className += " active";
         }
         </script>
-      </div> -->
+      </div>
+      <p>
+        Printed clothing is $10 a piece. I print on found clothing, either gifted to me or salvaged from fabric
+        recycling and alleyway free boxes. <i>If you have old shirts/sweatshirts lying around with minimal graphics on
+          them I am more than happy to exchange some artwork of your choice for your old clothes. Cotton tops with fine
+          (smooth) texture are best.</i>
+      </p>
+
+    </div>
+
+<br><br><br>
+
+    <!--totes - slidedeck-->
+    <div class="column10">
+      <div style="width:60%">
+        <a name="totes" id="totes"></a>
+        <div class="slideshow-container1">
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">1 / 9</div>
+            <img src="./media/crafts/bag3.jpg" style="width:100%">
+            <!--<div class="capt-text">Caption Text</div>-->
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">2 / 9</div>
+            <img src="./media/crafts/bag7.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">3 / 9</div>
+            <img src="./media/crafts/bag9.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">4 / 9</div>
+            <img src="./media/crafts/bag4.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">5 / 9</div>
+            <img src="./media/crafts/bag5.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">6 / 9</div>
+            <img src="./media/crafts/bag6.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">7 / 9</div>
+            <img src="./media/crafts/bag1.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">8 / 9</div>
+            <img src="./media/crafts/bag8.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides4 fade" style="display: none;">
+            <div class="numbertext">9 / 9</div>
+            <img src="./media/crafts/bag2.jpg" style="width:100%">
+          </div>
 
 
-  <br><Br><br>
-  <br>
-  <!--shirts-->
-  <img src="./media/shirts/pupshirt1.jpeg" style="margin-left:25%; width:50%">
+          <a class="prev" onclick="plusSlides4(-1)">❮</a>
+          <a class="next" onclick="plusSlides4(1)">❯</a>
 
-  <br><Br>
-  <div class="row2" style="margin-left:15%;"> 
-    <a name="shirts" id="shirts"></a>
+        </div>
+        <br>
 
-    <div class="column4">
-      <img src="./media/shirts/shirt-1.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7814.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7836.jpg" style="width:100%">
-    </div><br>
-    <div class="column4">
-      <img src="./media/shirts/shirt-2b.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7821.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7844.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7851.jpg" style="width:100%">
-    </div><br>
-    <div class="column4">
-      <img src="./media/shirts/shirt-2a.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7829.jpg" style="width:100%">
-      <img src="./media/shirts/IMG_7831.jpg" style="width:100%">
-    </div><br>
+        <div style="text-align:center">
+          <span class="dot4" onclick="currentSlide(1)"></span>
+          <span class="dot4" onclick="currentSlide(2)"></span>
+          <span class="dot4" onclick="currentSlide(3)"></span>
+          <span class="dot4" onclick="currentSlide(4)"></span>
+          <span class="dot4" onclick="currentSlide(5)"></span>
+          <span class="dot4" onclick="currentSlide(6)"></span>
+          <span class="dot4" onclick="currentSlide(7)"></span>
+          <span class="dot4" onclick="currentSlide(8)"></span>
+          <span class="dot4" onclick="currentSlide(9)"></span>
 
-  </div>
-  
-  <a href="#print-top">back to top</a>
-  <br><br><br>
+        </div>
+
+
+        <script>
+          let SlideIndex4 = 1;
+          showSlides4(SlideIndex4);
+
+          function plusSlides4(n) {
+            showSlides4(SlideIndex4 += n);
+          }
+
+          function currentSlide4(n) {
+            showSlides4(SlideIndex4 = n);
+          }
+
+          function showSlides4(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides4");
+            let dots = document.getElementsByClassName("dot4");
+            if (n > slides.length) { SlideIndex4 = 1 }
+            if (n < 1) { SlideIndex4 = slides.length }
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[SlideIndex4 - 1].style.display = "block";
+            dots[SlideIndex4 - 1].className += " active";
+          }
+        </script>
+      </div>
+      <p>Tote bags are 5$ a piece while supplies last.</p>
+    </div>
+
+    <br><br>
+ 
+
+    <br><Br><br>
+    <br>
+    <!--shirts-->
+    <!-- <img src="./media/shirts/pupshirt1.jpeg" style="margin-left:25%; width:50%">
+
+    <br><Br>
+    <div class="row2" style="margin-left:15%;">
+      <a name="shirts" id="shirts"></a>
+
+      <div class="column4">
+        <img src="./media/shirts/shirt-1.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7814.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7836.jpg" style="width:100%">
+      </div><br>
+      <div class="column4">
+        <img src="./media/shirts/shirt-2b.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7821.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7844.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7851.jpg" style="width:100%">
+      </div><br>
+      <div class="column4">
+        <img src="./media/shirts/shirt-2a.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7829.jpg" style="width:100%">
+        <img src="./media/shirts/IMG_7831.jpg" style="width:100%">
+      </div><br>
+
+    </div> -->
+
+    <a href="#print-top">back to top</a>
+    <br><br><br>
   </div>
 
   <!--page script-->
@@ -1306,9 +1377,10 @@ font-weight: lighter;
       document.getElementById(artsName).style.display = "block";
       evt.currentTarget.className += " active";
     }
-    </script>
+  </script>
 
 
 
 </body>
+
 </html>
