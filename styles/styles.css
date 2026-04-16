@@ -36,6 +36,16 @@ p {
 }
 
 
+
+/*code */
+code {
+  background: #d9f2fb54;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  font-size: 10pt;
+}
+
+
 /*paragraph text styling for NARROW phone screen*/
 @media screen and (max-width: 500px) {
     p {
